@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Next.js TypeScript Starter",
-    "short_name": "Next.js TypeScript Starter",
-    "description": "Next.js started configured TypeScript, ESLint, Tailwind, with some additional configuration",
+    "name": "100k Dev Jobs",
+    "short_name": "100k Dev Jobs",
+    "description": "Find tech jobs that pays $100k+ in USA, Europe, India. ",
     "icons": [
         {
             "src": "/path-to-icons/icon-192x192.png",

@@ -7,8 +7,8 @@ import { getMetadata } from "@/utils/metadata"
 
 export const metadata = getMetadata({
   path: "/",
-  title: "Next.js App",
-  description: "Next.js Typescript Starter",
+  title: "100k Dev Jobs",
+  description: "Find tech jobs that pays $100k+ in USA, Europe, India. ",
 })
 
 const Home: React.FC = () => {
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         transition={{ delay: 0, ...BASE_TRANSITION }}
         className="text-5xl font-bold tracking-tighter text-zinc-800 dark:text-zinc-300"
       >
-        Welcome to the Next.js starter!
+        Find tech jobs that pays $100k+ in USA, Europe, India.
       </motion.h1>
     </main>
   )

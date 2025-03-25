@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "nextjs-typescript-starter",
+      "name": "100k-dev-jobs",
       "dependencies": {
         "akar-icons": "^1.9.31",
         "class-variance-authority": "^0.7.1",

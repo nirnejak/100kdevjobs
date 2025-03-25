@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-typescript-starter",
-  "description": "Next.js TypeScript Starter",
+  "name": "100k-dev-jobs",
+  "description": "Find tech jobs that pays $100k+ in USA, Europe, India. ",
   "version": "1.0.0",
   "author": "Jitendra Nirnejak <jeetnirnejak@gmail.com>",
   "type": "module",
@@ -66,9 +66,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nirnejak/nextjs-typescript-starter"
+    "url": "https://github.com/nirnejak/100k-dev-jobs"
   },
   "bugs": {
-    "url": "https://github.com/nirnejak/nextjs-typescript-starter/issues"
+    "url": "https://github.com/nirnejak/100k-dev-jobs/issues"
   }
 }

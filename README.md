@@ -1,5 +1,5 @@
 <h1 align="center">
-  Next.js TypeScript Starter
+  100k Dev Jobs
 </h1>
 
 ---

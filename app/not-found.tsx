@@ -6,8 +6,8 @@ import { getMetadata } from "@/utils/metadata"
 
 export const metadata = getMetadata({
   path: "/",
-  title: "Not Found | Next.js App",
-  description: "Page not found on Next.js Typescript Starter",
+  title: "Not Found | 100k Dev Jobs",
+  description: "Page not found on 100k Dev Jobs",
 })
 
 const NotFound: React.FC = () => {

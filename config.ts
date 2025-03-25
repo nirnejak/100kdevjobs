@@ -1,14 +1,13 @@
 const config = {
   baseUrl: "https://example.com",
-  appName: "Next.js TypeScript Starter",
-  appDescription:
-    "Next.js started configured TypeScript, ESLint, Tailwind, with some additional configuration",
-  creator: "<Creator Name>",
-  authorName: "<Author Name>",
-  authorUrl: "<Author Name or Email>",
+  appName: "100k Dev Jobs",
+  appDescription: " Find tech jobs that pays $100k+ in USA, Europe, India. ",
+  creator: "Jitendra Nirnejak",
+  authorName: "Jitendra Nirnejak",
+  authorUrl: "https://nirnejak.com/",
   keywords: [
-    "Next.js",
-    "TailwindCSS",
+    "100k Dev Jobs",
+    "Tech Jobs",
     "Framer Motion",
     "TypeScript",
     "Akar Icons",
@@ -17,7 +16,7 @@ const config = {
     "JavaScript",
     "Postgres",
   ],
-  twitterSite: "@site",
-  twitterCreator: "@creator",
+  twitterSite: "@jeetnirnejak",
+  twitterCreator: "@jeetnirnejak",
 }
 export default config
