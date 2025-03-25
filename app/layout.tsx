@@ -3,8 +3,7 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import { Inter } from "next/font/google"
-import localFont from "next/font/local"
+import { Geist_Mono, Inter } from "next/font/google"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -17,15 +16,10 @@ const sansFont = Inter({
   display: "swap",
 })
 
-const monoFont = localFont({
+const monoFont = Geist_Mono({
   variable: "--mono-font",
-  src: [
-    {
-      path: "../fonts/JetBrainsMono-Regular.ttf",
-      weight: "regular",
-      style: "normal",
-    },
-  ],
+  subsets: ["latin"],
+  display: "swap",
 })
 
 export const viewport: Viewport = {
