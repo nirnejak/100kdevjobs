@@ -3,14 +3,14 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import { Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
 
 import "../styles/main.css"
 
-const sansFont = Inter({
+const sansFont = Plus_Jakarta_Sans({
   variable: "--sans-font",
   subsets: ["latin"],
   display: "swap",
@@ -39,9 +39,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       >
         <head>{renderSchemaTags()}</head>
 
-        <body
-          className={"overflow-x-hidden bg-zinc-50 dark:bg-zinc-900 font-sans"}
-        >
+        <body className={"overflow-x-hidden bg-zinc-900 font-sans"}>
           {children}
         </body>
       </html>

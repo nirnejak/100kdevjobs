@@ -13,15 +13,18 @@ export const metadata = getMetadata({
 
 const Home: React.FC = () => {
   return (
-    <main className="grid h-dvh place-content-center">
-      <motion.h1
-        initial={{ translateY: 20, opacity: 0, filter: `blur(10px)` }}
-        animate={{ translateY: 0, opacity: 1, filter: "none" }}
-        transition={{ delay: 0, ...BASE_TRANSITION }}
-        className="text-5xl font-bold tracking-tighter text-zinc-800 dark:text-zinc-300"
-      >
-        Find tech jobs that pays $100k+ in USA, Europe, India.
-      </motion.h1>
+    <main className="">
+      <section className="pt-80 max-w-5xl mx-auto">
+        <motion.h1
+          initial={{ translateY: 20, opacity: 0, filter: `blur(10px)` }}
+          animate={{ translateY: 0, opacity: 1, filter: "none" }}
+          transition={{ delay: 0, ...BASE_TRANSITION }}
+          className="text-6xl font-bold tracking-tighter leading-normal text-zinc-300"
+        >
+          Find tech jobs that pays <br />
+          $100k+ in USA, Europe, India.
+        </motion.h1>
+      </section>
     </main>
   )
 }
