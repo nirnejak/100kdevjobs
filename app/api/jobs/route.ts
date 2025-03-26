@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
-import { drizzle } from "drizzle-orm/node-postgres"
-import { Client } from "pg"
+
+import { db } from "@/drizzle.config"
 import { jobs } from "@/app/api/schema"
 import { and, eq, gte, lte, inArray, sql } from "drizzle-orm"
 
@@ -21,14 +21,6 @@ const DEFAULT_LIMIT = 10
 
 export async function GET(request: NextRequest) {
   try {
-    // Create a single PostgreSQL client for serverless environment
-    const client = new Client({
-      connectionString: process.env.DATABASE_URL,
-    })
-
-    // Create a drizzle database instance
-    const db = drizzle(client, { schema: { jobs } })
-
     // Get query parameters
     const searchParams = request.nextUrl.searchParams
     const filters: JobFilters = {
@@ -84,9 +76,6 @@ export async function GET(request: NextRequest) {
       .limit(filters.limit!)
       .offset(offset)
       .orderBy(jobs.createdAt)
-
-    // Close the client connection
-    await client.end()
 
     // Return response with pagination metadata
     return NextResponse.json({
