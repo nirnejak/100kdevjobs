@@ -5,6 +5,8 @@ import * as motion from "motion/react-client"
 import { BASE_TRANSITION } from "@/utils/animation"
 import { getMetadata } from "@/utils/metadata"
 
+import JobPosts from "@/components/JobPosts"
+
 export const metadata = getMetadata({
   path: "/",
   title: "100k Dev Jobs",
@@ -14,7 +16,7 @@ export const metadata = getMetadata({
 const Home: React.FC = () => {
   return (
     <main className="">
-      <section className="pt-80 max-w-5xl mx-auto">
+      <section className="mt-52 mb-24 max-w-5xl mx-auto">
         <motion.h1
           initial={{ translateY: 20, opacity: 0, filter: `blur(10px)` }}
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
@@ -25,6 +27,7 @@ const Home: React.FC = () => {
           $100k+ in USA, Europe, India.
         </motion.h1>
       </section>
+      <JobPosts />
     </main>
   )
 }
