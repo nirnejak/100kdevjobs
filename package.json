@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.0",
-    "akar-icons": "^1.9.31",
+    "@phosphor-icons/react": "^2.1.7",
     "class-variance-authority": "^0.7.1",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.41.0",
