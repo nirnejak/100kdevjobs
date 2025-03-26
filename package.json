@@ -1,5 +1,5 @@
 {
-  "name": "100k-dev-jobs",
+  "name": "100kdevjobs",
   "description": "Find tech jobs that pays $100k+ in USA, Europe, India. ",
   "version": "1.0.0",
   "author": "Jitendra Nirnejak <jeetnirnejak@gmail.com>",
@@ -72,9 +72,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nirnejak/100k-dev-jobs"
+    "url": "https://github.com/nirnejak/100kdevjobs"
   },
   "bugs": {
-    "url": "https://github.com/nirnejak/100k-dev-jobs/issues"
+    "url": "https://github.com/nirnejak/100kdevjobs/issues"
   }
 }

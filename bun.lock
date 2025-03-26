@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "100k-dev-jobs",
+      "name": "100kdevjobs",
       "dependencies": {
         "@neondatabase/serverless": "^1.0.0",
         "@phosphor-icons/react": "^2.1.7",
