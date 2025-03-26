@@ -42,6 +42,24 @@ bun run format
 bun run type-check
 ```
 
+**Create Migrations**
+
+```bash
+bun run db:generate
+```
+
+**Run Migrations**
+
+```bash
+bun run db:migrate
+```
+
+**Push Migration changes**
+
+```bash
+bun run db:push
+```
+
 **Build for Production**
 
 ```bash
