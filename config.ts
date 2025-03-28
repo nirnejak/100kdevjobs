@@ -1,7 +1,7 @@
 const config = {
-  baseUrl: "https://example.com",
+  baseUrl: "https://www.100kdevjobs.com",
   appName: "100k Dev Jobs",
-  appDescription: " Find tech jobs that pays $100k+ in USA, Europe, India. ",
+  appDescription: "Find tech jobs that pays $100k+ in USA, Europe, India. ",
   creator: "Jitendra Nirnejak",
   authorName: "Jitendra Nirnejak",
   authorUrl: "https://nirnejak.com/",
