@@ -39,6 +39,7 @@ export const job_subscribers = pgTable("job_subscribers", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 })
+
 export const job_submissions = pgTable("job_submissions", {
   id: serial("id").primaryKey(),
   title: varchar("title", { length: 255 }).notNull(),

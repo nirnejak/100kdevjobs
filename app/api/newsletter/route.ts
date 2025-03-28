@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server"
 
+import { eq } from "drizzle-orm"
+
 import { db } from "@/drizzle.config"
 import { job_subscribers } from "@/app/api/schema"
-import { and, eq, gte, lte, inArray, sql } from "drizzle-orm"
 
 export async function POST(request: NextRequest) {
   try {
