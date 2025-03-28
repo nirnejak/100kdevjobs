@@ -8,6 +8,8 @@ import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google"
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
 
+import Header from "@/components/Header"
+
 import "../styles/main.css"
 
 const sansFont = Plus_Jakarta_Sans({
@@ -40,6 +42,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <head>{renderSchemaTags()}</head>
 
         <body className={"overflow-x-hidden bg-zinc-900 font-sans"}>
+          <Header />
           {children}
         </body>
       </html>
