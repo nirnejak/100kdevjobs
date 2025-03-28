@@ -9,7 +9,7 @@ const Header: React.FC = () => {
       <header className="max-w-5xl mx-auto flex justify-between items-center py-4 text-zinc-300">
         <Link
           href="/"
-          className="text-2xl leading-none font-bold tracking-tight flex gap-2"
+          className="text-lg leading-none font-bold tracking-tight flex gap-2"
         >
           <span>100KDevJobs</span>
           <span className="font-mono text-zinc-200 bg-green-800 rounded-full px-3 py-1 text-xs ">
