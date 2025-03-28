@@ -1,7 +1,13 @@
 "use client"
 import * as React from "react"
 
-import { Briefcase, Clock, CurrencyDollar, MapPin } from "@phosphor-icons/react"
+import {
+  ArrowRight,
+  Briefcase,
+  Clock,
+  CurrencyDollar,
+  MapPin,
+} from "@phosphor-icons/react"
 
 export interface Job {
   title: string
@@ -28,14 +34,14 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           href={job.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-zinc-600 p-4 hover:border-zinc-500 transition-colors group"
+          className="border border-zinc-600 p-4 hover:border-zinc-500 focus:border-zinc-500 transition-colors outline-hidden group"
         >
           <div className="flex justify-between items-start mb-8">
             <div>
-              <p className="mb-1.5 text-zinc-200 text-lg font-semibold">
+              <p className="mb-1 text-zinc-200 text-lg font-semibold">
                 {job.title}
               </p>
-              <p className="mb-4 text-sm text-zinc-500">{job.company}</p>
+              <p className="mb-4 text-zinc-500">{job.company}</p>
             </div>
             <div className="grid grid-cols-4 gap-4 text-zinc-200">
               <p className="flex gap-1.5 items-center">
@@ -60,15 +66,19 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           </div>
           <div className="flex justify-between">
             <p className="text-zinc-500 flex gap-1.5 items-center">
-              {job.skills.split(",").map((skill) => (
-                <span className="font-mono text-zinc-200 bg-zinc-800 rounded-full px-3 py-1 text-xs ">
+              {job.skills.split(",").map((skill, index) => (
+                <span
+                  key={index}
+                  className="font-mono text-zinc-200 bg-zinc-800 rounded-full px-3 py-1 text-xs "
+                >
                   {skill}
                 </span>
               ))}
             </p>
-            <button className="w-[160px] text-sm text-zinc-200 bg-zinc-800 group-hover:bg-zinc-700 transition-colors group-focus:bg-zinc-700 outline-none py-2 cursor-pointer">
-              Apply
-            </button>
+            <span className="w-[160px] flex items-center justify-center gap-2 text-sm text-zinc-200 bg-zinc-800 group-hover:bg-green-700 transition-colors group-focus:bg-green-700 outline-none py-2 cursor-pointer">
+              <span>Apply</span>
+              <ArrowRight size={16} />
+            </span>
           </div>
         </a>
       ))}
