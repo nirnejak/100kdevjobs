@@ -21,7 +21,7 @@ interface Props {
 
 const JobPosts: React.FC<Props> = ({ jobs }) => {
   return (
-    <section className="max-w-5xl mx-auto grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-mono mb-20">
+    <section className="max-w-5xl mx-auto grid gap-4 grid-cols-1 mb-20">
       {jobs.map((job, index) => (
         <a
           key={index}
@@ -30,32 +30,46 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           rel="noopener noreferrer"
           className="border border-zinc-600 p-4 hover:border-zinc-500 transition-colors group"
         >
-          <p className="mb-1.5 text-zinc-200">{job.title}</p>
-          <p className="mb-4 text-sm text-zinc-500">{job.company}</p>
-          <p className="mb-8 text-sm text-zinc-500">{job.skills}</p>
-          <div className="mb-4 grid grid-cols-2 text-sm text-zinc-200">
-            <p className="flex gap-1.5 items-center">
-              <MapPin size={14} />
-              <span>{job.location}</span>
-            </p>
-            <p className="flex gap-1.5 items-center">
-              <Clock size={14} />
-              <span>{job.type}</span>
-            </p>
-            <p className="flex gap-1.5 items-center">
-              <Briefcase size={14} />
-              <span>
-                {job.minExperience}-{job.maxExperience} years
-              </span>
-            </p>
-            <p className="flex gap-1.5 items-center">
-              <CurrencyDollar size={14} />
-              <span>{job.salary}</span>
-            </p>
+          <div className="flex justify-between items-start mb-8">
+            <div>
+              <p className="mb-1.5 text-zinc-200 text-lg font-semibold">
+                {job.title}
+              </p>
+              <p className="mb-4 text-sm text-zinc-500">{job.company}</p>
+            </div>
+            <div className="grid grid-cols-4 gap-4 text-zinc-200">
+              <p className="flex gap-1.5 items-center">
+                <MapPin size={14} />
+                <span>{job.location}</span>
+              </p>
+              <p className="flex gap-1.5 items-center">
+                <Clock size={14} />
+                <span>{job.type}</span>
+              </p>
+              <p className="flex gap-1.5 items-center">
+                <Briefcase size={14} />
+                <span>
+                  {job.minExperience}-{job.maxExperience} years
+                </span>
+              </p>
+              <p className="flex gap-1.5 items-center ">
+                <CurrencyDollar size={14} />
+                <span>{job.salary}</span>
+              </p>
+            </div>
           </div>
-          <button className="text-sm text-zinc-200 bg-zinc-800 group-hover:bg-zinc-700 transition-colors group-focus:bg-zinc-700 outline-none w-full py-2 cursor-pointer">
-            Apply
-          </button>
+          <div className="flex justify-between">
+            <p className="text-zinc-500 flex gap-1.5 items-center">
+              {job.skills.split(",").map((skill) => (
+                <span className="font-mono text-zinc-200 bg-zinc-800 rounded-full px-3 py-1 text-xs ">
+                  {skill}
+                </span>
+              ))}
+            </p>
+            <button className="w-[160px] text-sm text-zinc-200 bg-zinc-800 group-hover:bg-zinc-700 transition-colors group-focus:bg-zinc-700 outline-none py-2 cursor-pointer">
+              Apply
+            </button>
+          </div>
         </a>
       ))}
     </section>
