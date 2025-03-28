@@ -49,7 +49,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               <p className="flex gap-1.5 items-center">
                 <Briefcase size={14} />
                 <span>
-                  {job.minExperience}-{job.maxExperience} years
+                  {job.minExperience} - {job.maxExperience} years
                 </span>
               </p>
               <p className="flex gap-1.5 items-center ">

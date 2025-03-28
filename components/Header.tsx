@@ -9,7 +9,7 @@ const Header: React.FC = () => {
       <Link href="/" className="text-2xl font-bold">
         100KDevJobs
       </Link>
-      <nav className="flex items-center gap-4">
+      <nav className="flex items-center gap-6">
         <Link href="/">FAQ</Link>
         <Link href="/jobs">Blog</Link>
         <Link href="/about">Ideas + Feedback</Link>
