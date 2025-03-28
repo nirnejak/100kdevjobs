@@ -39,3 +39,31 @@ export const job_subscribers = pgTable("job_subscribers", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 })
+export const job_submissions = pgTable("job_submissions", {
+  id: serial("id").primaryKey(),
+  title: varchar("title", { length: 255 }).notNull(),
+  description: text("description").notNull(),
+  link: varchar("link", { length: 512 }).notNull(),
+
+  salary: integer("salary").notNull(),
+
+  company: varchar("company", { length: 255 }).notNull(),
+  location: varchar("location", { length: 255 }).notNull(),
+  location_type: varchar("location_type", { length: 50 }).notNull(),
+
+  type: varchar("type", { length: 255 }).notNull(),
+  category: varchar("category", { length: 255 }).notNull(),
+  tags: jsonb("tags"),
+
+  experience_min: integer("experience_min").notNull(),
+  experience_max: integer("experience_max").notNull(),
+
+  submitter_email: varchar("submitter_email", { length: 255 }).notNull(),
+  submitter_name: varchar("submitter_name", { length: 255 }).notNull(),
+
+  status: varchar("status", { length: 50 }).notNull().default("pending"), // pending, approved, rejected
+  admin_notes: text("admin_notes"),
+
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+})
