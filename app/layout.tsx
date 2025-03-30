@@ -3,7 +3,11 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google"
+import {
+  Geist_Mono,
+  Plus_Jakarta_Sans,
+  Playfair_Display,
+} from "next/font/google"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -11,6 +15,12 @@ import { renderSchemaTags } from "@/utils/schema"
 import Header from "@/components/Header"
 
 import "../styles/main.css"
+
+const displayFont = Playfair_Display({
+  variable: "--display-font",
+  subsets: ["latin"],
+  display: "swap",
+})
 
 const sansFont = Plus_Jakarta_Sans({
   variable: "--sans-font",
@@ -37,7 +47,11 @@ const RootLayout: React.FC<Props> = ({ children }) => {
     <ViewTransitions>
       <html
         lang="en"
-        className={classNames(sansFont.variable, monoFont.variable)}
+        className={classNames(
+          displayFont.variable,
+          sansFont.variable,
+          monoFont.variable
+        )}
       >
         <head>{renderSchemaTags()}</head>
 

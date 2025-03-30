@@ -9,7 +9,7 @@ interface Props {}
 const HomeHero: React.FC<Props> = () => {
   return (
     <section className="mt-60 mb-48 max-w-5xl mx-auto">
-      <h1 className="text-6xl font-bold tracking-tighter leading-normal text-zinc-300 mb-6">
+      <h1 className="text-6xl font-bold tracking-tight leading-normal text-zinc-300 mb-6 font-display">
         <motion.span
           initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
           animate={{ translateY: 0, opacity: 1, filter: "none" }}

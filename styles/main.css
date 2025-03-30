@@ -18,6 +18,7 @@
 }
 
 @theme {
+  --font-display: var(--display-font);
   --font-sans: var(--sans-font);
   --font-mono: var(--mono-font);
 
