@@ -3,9 +3,27 @@ import * as React from "react"
 
 import { Link } from "next-view-transitions"
 
+import classNames from "@/utils/classNames"
+
 const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = React.useState(false)
+  const [isScrolled, setIsScrolled] = React.useState(false)
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-10 bg-zinc-900">
+    <div
+      className={classNames(
+        "fixed top-0 left-0 right-0 z-10 transition-colors",
+        isScrolled ? "bg-zinc-900/90 backdrop-blur-sm" : ""
+      )}
+    >
       <header className="max-w-5xl mx-auto flex justify-between items-center py-4 text-zinc-300">
         <Link
           href="/"
