@@ -8,10 +8,10 @@ import DotBackground from "@/components/DotBackground"
 
 const HomeHero: React.FC = () => {
   return (
-    <section className="relative mb-12 h-dvh flex justify-center items-center">
+    <section className="relative mb-12 h-[80vh] flex justify-center items-center">
       <DotBackground />
-      <div className="max-w-5xl flex-1">
-        <h1 className="text-6xl font-bold tracking-tight leading-normal text-zinc-300 mb-6 font-display">
+      <div className="max-w-5xl flex-1 flex flex-col items-center">
+        <h1 className="font-display text-6xl font-bold tracking-tighter text-center leading-tight text-zinc-300 mb-6">
           <motion.span
             initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
             animate={{ translateY: 0, opacity: 1, filter: "none" }}
@@ -56,7 +56,9 @@ const HomeHero: React.FC = () => {
               Get notified
             </button>
           </form>
-          <p className="text-zinc-400 text-sm">No spam. Unsubscribe anytime.</p>
+          <p className="text-zinc-400 text-xs text-center">
+            No spam. Unsubscribe anytime.
+          </p>
         </motion.div>
       </div>
     </section>

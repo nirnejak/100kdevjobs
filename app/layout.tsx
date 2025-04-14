@@ -6,7 +6,7 @@ import { ViewTransitions } from "next-view-transitions"
 import {
   Geist_Mono,
   Plus_Jakarta_Sans,
-  Playfair_Display,
+  Bricolage_Grotesque,
 } from "next/font/google"
 
 import classNames from "@/utils/classNames"
@@ -16,7 +16,7 @@ import Header from "@/components/Header"
 
 import "../styles/main.css"
 
-const displayFont = Playfair_Display({
+const displayFont = Bricolage_Grotesque({
   variable: "--display-font",
   subsets: ["latin"],
   display: "swap",
