@@ -4,12 +4,12 @@ import * as motion from "motion/react-client"
 
 import { BASE_TRANSITION } from "@/utils/animation"
 
-import DotBackground from "@/components/DotBackground"
+import { BackgroundBeams } from "@/components/BackgroundBeams"
 
 const HomeHero: React.FC = () => {
   return (
     <section className="relative mb-12 h-[80vh] flex justify-center items-center">
-      <DotBackground />
+      <BackgroundBeams />
       <div className="max-w-5xl flex-1 flex flex-col items-center">
         <h1 className="font-display text-6xl font-bold tracking-tighter text-center leading-tight text-zinc-300 mb-6">
           <motion.span
