@@ -9,6 +9,10 @@ import {
   MapPin,
 } from "@phosphor-icons/react"
 
+import { motion } from "motion/react"
+
+import { BASE_TRANSITION } from "@/utils/animation"
+
 export interface Job {
   title: string
   company: string
@@ -29,7 +33,10 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
   return (
     <section className="max-w-5xl mx-auto grid gap-4 grid-cols-1 mb-20">
       {jobs.map((job, index) => (
-        <a
+        <motion.a
+          initial={{ opacity: 0, translateY: 10 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          transition={{ ...BASE_TRANSITION, delay: index * 0.1 }}
           key={index}
           href={job.link}
           target="_blank"
@@ -80,7 +87,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               <ArrowRight size={16} />
             </span>
           </div>
-        </a>
+        </motion.a>
       ))}
     </section>
   )
