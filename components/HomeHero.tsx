@@ -43,15 +43,15 @@ const HomeHero: React.FC = () => {
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0.3 }}
         >
-          <form className="flex max-w-[400px] mb-2">
+          <form className="flex max-w-[400px] mb-2 rounded-xl overflow-hidden">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 bg-zinc-800 hover:bg-zinc-950 focus:bg-zinc-950 px-4 py-2.5 text-sm text-zinc-200 outline-hidden transition-colors"
+              className="flex-1 bg-zinc-800 hover:bg-zinc-950/50 focus:bg-zinc-950/50 px-4 py-3 text-sm text-zinc-200 outline-hidden transition-colors leading-none"
             />
             <button
               type="submit"
-              className="bg-green-800 hover:bg-green-900 focus:bg-green-900 px-4 py-2.5 text-sm text-zinc-200 outline-hidden transition-colors"
+              className="bg-green-800 hover:bg-green-900 focus:bg-green-900 px-4 py-3 text-sm text-zinc-200 outline-hidden transition-colors leading-none"
             >
               Get notified
             </button>
