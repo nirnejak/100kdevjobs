@@ -82,7 +82,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                 </span>
               ))}
             </p>
-            <span className="w-[160px] flex items-center justify-center gap-2 text-sm text-zinc-200 bg-zinc-800 group-hover:bg-green-700 transition-colors group-focus:bg-green-700 outline-none py-2 cursor-pointer">
+            <span className="w-[160px] rounded-lg flex items-center justify-center gap-2 text-sm text-zinc-200 bg-zinc-800 group-hover:bg-green-700 transition-colors group-focus:bg-green-700 outline-none py-2 cursor-pointer">
               <span>Apply</span>
               <ArrowRight size={16} />
             </span>
