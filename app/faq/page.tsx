@@ -3,7 +3,7 @@ import * as React from "react"
 import { getMetadata } from "@/utils/metadata"
 
 export const metadata = getMetadata({
-  path: "/faq",
+  path: "/faq/",
   title: "FAQ | 100k Dev Jobs",
   description: "Frequently asked questions about 100k Dev Jobs",
 })
