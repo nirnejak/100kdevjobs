@@ -48,7 +48,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               <p className="mb-1 text-zinc-200 text-lg font-semibold">
                 {job.title}
               </p>
-              <p className="mb-4 text-zinc-500">{job.company}</p>
+              <p className="text-zinc-500">{job.company}</p>
             </div>
             <div className="grid grid-cols-4 gap-4 text-zinc-200">
               <p className="flex gap-1.5 items-center">
