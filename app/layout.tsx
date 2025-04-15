@@ -3,11 +3,7 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import {
-  Geist_Mono,
-  Plus_Jakarta_Sans,
-  Bricolage_Grotesque,
-} from "next/font/google"
+import { Geist_Mono, Bricolage_Grotesque, Onest } from "next/font/google"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -22,7 +18,7 @@ const displayFont = Bricolage_Grotesque({
   display: "swap",
 })
 
-const sansFont = Plus_Jakarta_Sans({
+const sansFont = Onest({
   variable: "--sans-font",
   subsets: ["latin"],
   display: "swap",
