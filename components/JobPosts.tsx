@@ -41,7 +41,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           href={job.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-zinc-600 p-4 hover:border-zinc-500 focus:border-zinc-500 transition-colors outline-hidden group"
+          className="border border-zinc-600 p-4 hover:border-zinc-500 focus:border-zinc-500 hover:bg-zinc-200/5 focus:bg-zinc-200/5 rounded-xl transition-colors outline-hidden group"
         >
           <div className="flex justify-between items-start mb-8">
             <div>
