@@ -13,7 +13,7 @@ export const metadata = getMetadata({
 
 const Home: React.FC = () => {
   return (
-    <main>
+    <main className="pt-48">
       <HomeHero />
       <JobPosts jobs={jobs} />
     </main>

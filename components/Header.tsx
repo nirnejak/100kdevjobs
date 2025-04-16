@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   return (
     <div
       className={classNames(
-        "fixed top-0 left-0 right-0 z-10 transition-colors",
+        "fixed top-0 left-0 right-0 z-20 transition-colors",
         isScrolled ? "bg-zinc-900/90 backdrop-blur-sm" : ""
       )}
     >
@@ -36,9 +36,8 @@ const Header: React.FC = () => {
         </Link>
         <nav className="flex items-center gap-6 tracking-tight">
           <Link href="/faq/">FAQ</Link>
-          <Link href="/about/">Ideas + Feedback</Link>
           <Link
-            href={"/submit"}
+            href={"/post-job/"}
             className="text-sm rounded-xl text-zinc-800 bg-zinc-200 hover:bg-zinc-400 transition-colors focus:bg-zinc-400 outline-none py-2 px-7 cursor-pointer"
           >
             Post a Job
