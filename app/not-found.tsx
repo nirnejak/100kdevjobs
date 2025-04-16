@@ -15,7 +15,7 @@ const NotFound: React.FC = () => {
     <main className="max-w-5xl mx-auto">
       <section className="grid min-h-dvh place-content-center">
         <div className="text-center">
-          <h1 className="mb-3 text-5xl font-bold tracking-tighter text-zinc-200">
+          <h1 className="mb-3 text-5xl font-display font-bold tracking-tighter text-zinc-200">
             404
           </h1>
           <p className="text-base text-zinc-300">
