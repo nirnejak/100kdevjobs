@@ -9,6 +9,7 @@ import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
 
 import Header from "@/components/Header"
+import BackgroundBeams from "@/components/atoms/BackgroundBeams"
 
 import "../styles/main.css"
 
@@ -31,7 +32,7 @@ const monoFont = Geist_Mono({
 })
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#18181B",
 }
 
 interface Props {
@@ -51,9 +52,13 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       >
         <head>{renderSchemaTags()}</head>
 
-        <body className={"overflow-x-hidden bg-zinc-900 font-sans"}>
+        <body className={"overflow-x-hidden bg-zinc-900 font-sans relative"}>
           <Header />
           {children}
+
+          <section className="fixed inset-0 -z-10 h-[70vh]">
+            <BackgroundBeams />
+          </section>
         </body>
       </html>
     </ViewTransitions>
