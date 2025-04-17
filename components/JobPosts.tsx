@@ -1,7 +1,6 @@
 "use client"
 import * as React from "react"
 
-import { useSearchParams } from "next/navigation"
 import { motion } from "motion/react"
 import {
   ArrowRight,

@@ -1,6 +1,7 @@
 import * as React from "react"
 
 import { useSearchParams, useRouter } from "next/navigation"
+
 import { Job } from "@/components/JobPosts"
 
 type FILTERS = {
