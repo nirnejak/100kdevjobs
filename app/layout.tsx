@@ -56,7 +56,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           <Header />
           {children}
 
-          <section className="fixed inset-0 -z-10 h-[70vh]">
+          <section className="absolute inset-0 -z-10 h-[70vh]">
             <BackgroundBeams />
           </section>
         </body>
