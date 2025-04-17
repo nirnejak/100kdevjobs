@@ -118,7 +118,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
         </div>
         <button
           onClick={() => handleSearch()}
-          className="py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm text-zinc-200 bg-green-700 hover:bg-green-800 focus:bg-green-800 transition-colors outline-none cursor-pointer"
+          className="py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm text-zinc-200 bg-green-700 hover:bg-green-800 focus:bg-green-800 transition-colors outline-none cursor-pointer font-medium"
         >
           <span>Search Jobs</span>
           <MagnifyingGlass size={16} />
@@ -229,7 +229,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                 </p>
                 <p className="flex gap-1.5 items-center ">
                   <CurrencyDollar size={14} />
-                  <span>{job.salary}</span>
+                  <span>{job.salary.toLocaleString()}</span>
                 </p>
               </motion.div>
             </motion.div>
