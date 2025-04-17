@@ -1,6 +1,7 @@
 "use client"
 import * as React from "react"
 
+import { motion } from "motion/react"
 import {
   ArrowRight,
   Briefcase,
@@ -9,20 +10,25 @@ import {
   MapPin,
 } from "@phosphor-icons/react"
 
-import { motion } from "motion/react"
-
 import { BASE_TRANSITION } from "@/utils/animation"
 
 export interface Job {
+  id: number
   title: string
-  company: string
-  skills: string
-  location: string
-  type: string
-  minExperience: number
-  maxExperience: number
-  salary: string
+  description: string
   link: string
+  salary: number
+  company: string
+  location: string
+  location_type: string
+  type: string
+  category: string
+  tags: string[]
+  experience_min: number
+  experience_max: number
+  is_active: boolean | null
+  createdAt: Date
+  updatedAt: Date
 }
 
 interface Props {
@@ -34,7 +40,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
     <section className="max-w-5xl mx-auto grid gap-4 grid-cols-1 mb-20">
       {jobs.map((job, index) => (
         <motion.a
-          initial={{ opacity: 0, translateY: 10 }}
+          initial={{ opacity: 0, translateY: 20 }}
           whileInView={{ opacity: 1, translateY: 0 }}
           transition={{ ...BASE_TRANSITION, delay: 0.1 }}
           key={index}
@@ -57,12 +63,12 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               </p>
               <p className="flex gap-1.5 items-center">
                 <Clock size={14} />
-                <span>{job.type}</span>
+                <span className="capitalize">{job.type}</span>
               </p>
               <p className="flex gap-1.5 items-center">
                 <Briefcase size={14} />
                 <span>
-                  {job.minExperience} - {job.maxExperience} years
+                  {job.experience_min} - {job.experience_max} years
                 </span>
               </p>
               <p className="flex gap-1.5 items-center ">
@@ -73,12 +79,12 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           </div>
           <div className="flex justify-between">
             <p className="text-zinc-500 flex gap-1.5 items-center">
-              {job.skills.split(",").map((skill, index) => (
+              {job.tags.map((tag, index) => (
                 <span
                   key={index}
                   className="font-mono text-zinc-200 bg-zinc-800 rounded-full px-3 py-1 text-xs "
                 >
-                  {skill}
+                  {tag}
                 </span>
               ))}
             </p>
