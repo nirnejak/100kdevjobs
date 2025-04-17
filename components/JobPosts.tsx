@@ -189,7 +189,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             href={job.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-zinc-600 p-4 hover:border-zinc-700 focus:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 focus:bg-zinc-800 rounded-xl transition-colors outline-hidden group"
+            className="border flex flex-col border-zinc-600 p-4 hover:border-zinc-700 focus:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 focus:bg-zinc-800 rounded-xl transition-colors outline-hidden group"
           >
             <motion.div
               layout
@@ -211,7 +211,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               </motion.div>
               <motion.div
                 layout
-                className="grid grid-cols-4 gap-4 text-zinc-200"
+                className="grid grid-cols-4 gap-4 text-zinc-200 text-sm"
               >
                 <p className="flex gap-1.5 items-center">
                   <MapPin size={14} />
@@ -237,7 +237,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               layout
               className={classNames(
                 "flex justify-between",
-                view === "rows" ? "flex-row" : "flex-col gap-4"
+                view === "rows" ? "flex-row" : "flex-col gap-4 mt-auto"
               )}
             >
               <motion.p
