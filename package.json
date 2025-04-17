@@ -18,6 +18,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "@neondatabase/serverless": "^1.0.0",
     "@phosphor-icons/react": "^2.1.7",
     "@radix-ui/react-accordion": "^1.2.7",
@@ -28,7 +29,10 @@
     "next-view-transitions": "^0.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "sharp": "^0.34.1"
+    "react-hook-form": "^7.56.3",
+    "sharp": "^0.34.1",
+    "sonner": "^2.0.3",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
