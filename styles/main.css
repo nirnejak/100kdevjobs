@@ -17,6 +17,17 @@
   -webkit-text-fill-color: white;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 @theme {
   --font-display: var(--display-font);
   --font-sans: var(--sans-font);

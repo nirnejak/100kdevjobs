@@ -1,7 +1,7 @@
 "use client"
 import * as React from "react"
 
-import { useSearchParams, useRouter } from "next/navigation"
+import { useSearchParams } from "next/navigation"
 import { motion } from "motion/react"
 import {
   ArrowRight,
@@ -13,6 +13,8 @@ import {
 } from "@phosphor-icons/react"
 
 import { BASE_TRANSITION } from "@/utils/animation"
+
+import useJobFilters from "@/hooks/useJobFilters"
 
 export interface Job {
   id: number
@@ -37,80 +39,9 @@ interface Props {
   jobs: Job[]
 }
 
-type FILTERS = {
-  search?: string
-  location?: string
-  experience_min?: number
-  experience_max?: number
-  salary?: number
-}
-
-const initialFilters: FILTERS = {
-  search: "",
-  location: "",
-  experience_min: undefined,
-  experience_max: undefined,
-  salary: undefined,
-}
-
 const JobPosts: React.FC<Props> = ({ jobs }) => {
-  const router = useRouter()
-  const params = useSearchParams()
-  const [filters, setFilters] = React.useState<FILTERS>(initialFilters)
-
-  React.useEffect(() => {
-    const search = params.get("search")
-    const location = params.get("location")
-    const experience_min = params.get("experience_min")
-    const experience_max = params.get("experience_max")
-    const salary = params.get("salary")
-
-    setFilters({
-      search: search || "",
-      location: location || "",
-      experience_min: experience_min ? parseInt(experience_min) : undefined,
-      experience_max: experience_max ? parseInt(experience_max) : undefined,
-      salary: salary ? parseInt(salary) : undefined,
-    })
-  }, [params])
-
-  const handleSearch = () => {
-    const queryParams = {
-      search: filters.search || "",
-      location: filters.location || "",
-      experience_min: filters.experience_min?.toString() || "",
-      experience_max: filters.experience_max?.toString() || "",
-      salary: filters.salary?.toString() || "",
-    }
-    const searchParams = new URLSearchParams(queryParams)
-    router.push(`?${searchParams.toString()}`, { scroll: false })
-  }
-
-  const filteredJobs = React.useMemo(() => {
-    return jobs.filter((job) => {
-      const search = params.get("search")
-      const location = params.get("location")
-      const experience_min = params.get("experience_min")
-      const salary = params.get("salary")
-
-      if (search && !job.title.toLowerCase().includes(search.toLowerCase())) {
-        return false
-      }
-      if (
-        location &&
-        !job.location.toLowerCase().includes(location.toLowerCase())
-      ) {
-        return false
-      }
-      if (experience_min && job.experience_min < parseInt(experience_min)) {
-        return false
-      }
-      if (salary && job.salary < parseInt(salary)) {
-        return false
-      }
-      return true
-    })
-  }, [jobs, filters])
+  const { filters, setFilters, handleSearch, filteredJobs } =
+    useJobFilters(jobs)
 
   return (
     <section className="max-w-5xl mx-auto mb-20">
@@ -157,7 +88,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             <input
               type="number"
               placeholder="Min Experience"
-              value={filters.experience_min}
+              value={filters.experience_min || ""}
               onChange={(e) =>
                 setFilters({
                   ...filters,
@@ -174,7 +105,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             <input
               type="number"
               placeholder="Min Salary"
-              value={filters.salary}
+              value={filters.salary || ""}
               onChange={(e) =>
                 setFilters({ ...filters, salary: parseInt(e.target.value) })
               }
@@ -186,7 +117,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           </div>
           <button
             onClick={() => handleSearch()}
-            className="py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm text-zinc-200 bg-green-700 hover:bg-green-800 transition-colors focus:bg-green-800 outline-none cursor-pointer"
+            className="py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm text-zinc-200 bg-green-700 hover:bg-green-800 focus:bg-green-800 transition-colors outline-none cursor-pointer"
           >
             <span>Search Jobs</span>
             <MagnifyingGlass size={16} />
