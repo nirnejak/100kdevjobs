@@ -38,7 +38,7 @@ const Header: React.FC = () => {
           <Link href="/faq/">FAQ</Link>
           <Link
             href={"/post-job/"}
-            className="text-sm rounded-xl text-zinc-800 bg-zinc-200 hover:bg-zinc-400 transition-colors focus:bg-zinc-400 outline-none py-2 px-7 cursor-pointer"
+            className="text-sm rounded-xl text-zinc-800 bg-zinc-200 hover:bg-zinc-400 transition-colors focus:bg-zinc-400 outline-none py-2 px-7 cursor-pointer font-medium"
           >
             Post a Job
           </Link>
