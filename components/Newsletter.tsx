@@ -23,14 +23,23 @@ const Newsletter: React.FC = () => {
       })
 
       if (!response.ok) {
-        throw new Error("Failed to subscribe")
+        const data = await response.json()
+        throw new Error(data.error)
       }
 
       setSuccess("You've been subscribed to the newsletter")
       setEmail("")
+
+      setTimeout(() => {
+        setSuccess(null)
+      }, 3000)
     } catch (error) {
       console.error("Error subscribing:", error)
-      setError("Failed to subscribe")
+      setError(error instanceof Error ? error.message : "Failed to subscribe")
+
+      setTimeout(() => {
+        setError(null)
+      }, 3000)
     }
   }
 
