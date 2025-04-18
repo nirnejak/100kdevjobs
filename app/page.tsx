@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Suspense } from "react"
 
 import { getMetadata } from "@/utils/metadata"
 
@@ -20,7 +21,9 @@ const Home: React.FC = async () => {
   return (
     <main className="pt-48">
       <HomeHero />
-      <JobPosts jobs={allJobs as Job[]} />
+      <Suspense fallback={<div>Loading jobs...</div>}>
+        <JobPosts jobs={allJobs as Job[]} />
+      </Suspense>
     </main>
   )
 }
