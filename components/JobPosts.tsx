@@ -170,7 +170,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
         layout
         className={classNames(
           "grid gap-4",
-          view === "rows" ? "grid-cols-1" : "grid-cols-2"
+          view === "rows" ? "grid-cols-1" : "grid-cols-3"
         )}
       >
         {filteredJobs.map((job, index) => (
@@ -211,26 +211,31 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               </motion.div>
               <motion.div
                 layout
-                className="grid grid-cols-4 gap-4 text-zinc-200 text-sm"
+                className={classNames(
+                  "grid text-zinc-200 text-sm",
+                  view === "rows"
+                    ? "grid-cols-4 gap-4"
+                    : "grid-cols-2 gap-x-10 gap-y-2 mb-2"
+                )}
               >
-                <p className="flex gap-1.5 items-center">
+                <motion.p layout className="flex gap-1.5 items-center">
                   <MapPin size={14} />
                   <span>{job.location}</span>
-                </p>
-                <p className="flex gap-1.5 items-center">
+                </motion.p>
+                <motion.p layout className="flex gap-1.5 items-center">
                   <Clock size={14} />
                   <span className="capitalize">{job.type}</span>
-                </p>
-                <p className="flex gap-1.5 items-center">
+                </motion.p>
+                <motion.p layout className="flex gap-1.5 items-center">
                   <Briefcase size={14} />
                   <span>
                     {job.experience_min} - {job.experience_max} years
                   </span>
-                </p>
-                <p className="flex gap-1.5 items-center ">
+                </motion.p>
+                <motion.p layout className="flex gap-1.5 items-center ">
                   <CurrencyDollar size={14} />
                   <span>{job.salary.toLocaleString()}</span>
-                </p>
+                </motion.p>
               </motion.div>
             </motion.div>
             <motion.div
