@@ -310,7 +310,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                 layout
                 className={classNames(
                   "rounded-lg flex items-center justify-center gap-2 text-sm text-zinc-200 bg-zinc-800 group-hover:bg-green-700 transition-colors group-focus:bg-green-700 outline-none py-2 cursor-pointer",
-                  view === "rows" ? "w-[160px]" : "w-full"
+                  view === "rows" ? "w-40" : "w-full"
                 )}
               >
                 <motion.span layout>Apply</motion.span>
