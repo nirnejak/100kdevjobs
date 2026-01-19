@@ -39,7 +39,10 @@ const FAQPage: React.FC = () => {
           initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0.1 }}
-          className="mx-auto w-full max-w-3xl"
+          className="
+            mx-auto w-full max-w-3xl px-4
+            md:px-0
+          "
         >
           <h2 className="mb-4 text-xl font-bold tracking-tight text-zinc-200">
             For Developers
@@ -130,7 +133,10 @@ const FAQPage: React.FC = () => {
           initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0.2 }}
-          className="mx-auto w-full max-w-3xl"
+          className="
+            mx-auto w-full max-w-3xl px-4
+            md:px-0
+          "
         >
           <h2 className="mb-4 text-xl font-bold tracking-tight text-zinc-200">
             For Employers
