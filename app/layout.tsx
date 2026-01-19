@@ -2,7 +2,11 @@ import * as React from "react"
 
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
-import { Geist_Mono, Bricolage_Grotesque, Onest } from "next/font/google"
+import {
+  Geist_Mono,
+  Bricolage_Grotesque,
+  Instrument_Sans,
+} from "next/font/google"
 
 import { ReactLenis } from "lenis/react"
 
@@ -20,7 +24,7 @@ const displayFont = Bricolage_Grotesque({
   display: "swap",
 })
 
-const sansFont = Onest({
+const sansFont = Instrument_Sans({
   variable: "--sans-font",
   subsets: ["latin"],
   display: "swap",
