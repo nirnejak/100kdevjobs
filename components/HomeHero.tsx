@@ -11,8 +11,9 @@ const HomeHero: React.FC = () => {
     <section className="relative mb-44 flex flex-col items-center">
       <h1
         className="
-          mb-6 text-center font-primary text-5xl/relaxed font-bold
+          mb-4 text-center font-primary text-2xl/relaxed font-bold
           tracking-tighter text-zinc-300
+          md:text-4xl/relaxed
         "
       >
         <motion.span
@@ -36,7 +37,10 @@ const HomeHero: React.FC = () => {
         initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
         animate={{ translateY: 0, opacity: 1, filter: "none" }}
         transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0.2 }}
-        className="mb-8 text-lg tracking-tighter text-zinc-400"
+        className="
+          mb-18 px-10 text-center text-base tracking-tighter text-zinc-400
+          md:mb-30 md:px-0
+        "
       >
         Get notified about high paying jobs at top tech companies.
       </motion.p>
