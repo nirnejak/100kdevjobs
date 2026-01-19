@@ -48,7 +48,12 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
   const [view, setView] = React.useState<"rows" | "grid">("rows")
 
   return (
-    <section className="mx-auto mb-20 max-w-5xl">
+    <section
+      className="
+        mx-auto mb-20 max-w-5xl px-4
+        md:px-0
+      "
+    >
       <motion.form
         initial={{ opacity: 0, translateY: 10 }}
         whileInView={{ opacity: 1, translateY: 0 }}
@@ -207,7 +212,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
         layout
         className={classNames(
           "grid gap-4",
-          view === "rows" ? "grid-cols-1" : "grid-cols-3"
+          view === "rows" ? "grid-cols-1" : "md:grid-cols-3"
         )}
       >
         {filteredJobs.map((job, index) => (
@@ -237,7 +242,9 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               layout
               className={classNames(
                 "flex justify-between items-start mb-8",
-                view === "rows" ? "flex-row" : "flex-col gap-4"
+                view === "rows"
+                  ? "md:flex-row flex-col gap-4 md:gap-0"
+                  : "flex-col gap-4"
               )}
             >
               <motion.div layout>
@@ -258,7 +265,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                 className={classNames(
                   "grid text-zinc-200 text-sm",
                   view === "rows"
-                    ? "grid-cols-4 gap-6"
+                    ? "md:grid-cols-4 md:gap-6 grid-cols-2 gap-x-10 gap-y-2 mb-2 md:mb-0"
                     : "grid-cols-2 gap-x-10 gap-y-2 mb-2"
                 )}
               >
@@ -298,7 +305,9 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               layout
               className={classNames(
                 "flex justify-between",
-                view === "rows" ? "flex-row" : "flex-col gap-4 mt-auto"
+                view === "rows"
+                  ? "md:flex-row flex-col gap-4 md:gap-0"
+                  : "flex-col gap-4 mt-auto"
               )}
             >
               <motion.p
@@ -324,7 +333,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                 layout
                 className={classNames(
                   "flex items-center justify-center gap-2 text-sm text-zinc-200 bg-zinc-800 group-hover:bg-green-700 transition-colors group-focus:bg-green-700 outline-none py-2 cursor-pointer",
-                  view === "rows" ? "w-40" : "w-full"
+                  view === "rows" ? "md:w-40 w-full" : "w-full"
                 )}
               >
                 <motion.span layout>Apply</motion.span>
