@@ -51,7 +51,7 @@ const Newsletter: React.FC = () => {
     >
       <form
         onSubmit={handleSubmit}
-        className="mb-2 flex max-w-[400px] overflow-hidden rounded-xl"
+        className="mb-3 flex max-w-100 overflow-hidden rounded-xl"
       >
         <input
           required
@@ -60,8 +60,8 @@ const Newsletter: React.FC = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="
-            flex-1 bg-zinc-800 px-4 py-3 text-sm leading-none text-zinc-200
-            outline-hidden transition-colors
+            flex-1 bg-zinc-800 px-4 py-3 text-sm leading-none tracking-tight
+            text-zinc-200 outline-hidden transition-colors
             hover:bg-zinc-950/50
             focus:bg-zinc-950/50
           "
@@ -69,8 +69,8 @@ const Newsletter: React.FC = () => {
         <button
           type="submit"
           className="
-            bg-green-800 px-4 py-3 text-sm leading-none text-zinc-200
-            outline-hidden transition-colors
+            bg-green-800 px-4 py-3 text-sm leading-none font-semibold
+            tracking-tight text-zinc-200 outline-hidden transition-colors
             hover:bg-green-900
             focus:bg-green-900
           "
@@ -78,7 +78,11 @@ const Newsletter: React.FC = () => {
           Get notified
         </button>
       </form>
-      <p className="text-center text-xs text-zinc-400">
+      <p
+        className="
+          text-center text-xs font-semibold tracking-tight text-zinc-400
+        "
+      >
         {success || error || "No spam. Unsubscribe anytime."}
       </p>
     </motion.div>

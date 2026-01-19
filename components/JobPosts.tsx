@@ -151,7 +151,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           onClick={() => handleSearch()}
           className="
             flex cursor-pointer items-center justify-center gap-2 bg-green-700
-            py-2.5 text-sm font-medium tracking-tight text-zinc-200
+            py-2.5 text-sm font-semibold tracking-tight text-zinc-200
             transition-colors outline-none
             hover:bg-green-800
             focus:bg-green-800
