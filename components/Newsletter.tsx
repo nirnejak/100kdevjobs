@@ -51,7 +51,7 @@ const Newsletter: React.FC = () => {
     >
       <form
         onSubmit={handleSubmit}
-        className="mb-3 flex max-w-100 overflow-hidden rounded-xl"
+        className="mb-3 flex max-w-100 overflow-hidden"
       >
         <input
           required

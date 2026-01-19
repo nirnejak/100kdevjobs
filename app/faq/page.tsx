@@ -50,9 +50,7 @@ const FAQPage: React.FC = () => {
           <Accordion
             type="single"
             collapsible
-            className="
-              mb-20 rounded-2xl bg-zinc-800 px-1.5 pt-1.5 pb-0.5 text-zinc-200
-            "
+            className="mb-20 bg-zinc-800 px-1.5 pt-1.5 pb-0.5 text-zinc-200"
           >
             <AccordionItem value="item-1">
               <AccordionTrigger>What is 100K Dev Jobs?</AccordionTrigger>
@@ -144,9 +142,7 @@ const FAQPage: React.FC = () => {
           <Accordion
             type="single"
             collapsible
-            className="
-              mb-20 rounded-2xl bg-zinc-800 px-1.5 pt-1.5 pb-0.5 text-zinc-200
-            "
+            className="mb-20 bg-zinc-800 px-1.5 pt-1.5 pb-0.5 text-zinc-200"
           >
             <AccordionItem value="item-1">
               <AccordionTrigger>

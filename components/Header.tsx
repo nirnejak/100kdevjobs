@@ -61,11 +61,12 @@ const Header: React.FC = () => {
           <Link
             href={"/post-job/"}
             className="
-              cursor-pointer rounded-xl bg-zinc-200 px-3.5 py-2 text-xs
-              font-semibold text-zinc-800 transition-colors outline-none
+              cursor-pointer bg-zinc-200 px-3.5 py-2.5 text-xs leading-none
+              font-semibold tracking-tight text-zinc-800 transition-colors
+              outline-none
               hover:bg-zinc-400
               focus:bg-zinc-400
-              md:px-5 md:text-sm
+              md:px-4 md:py-3 md:text-sm
             "
           >
             Post a Job

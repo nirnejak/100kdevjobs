@@ -249,7 +249,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                 >
                   {job.title}
                 </motion.p>
-                <motion.p layout className="tracking-tighter text-zinc-500">
+                <motion.p layout className="tracking-tight text-zinc-500">
                   {job.company}
                 </motion.p>
               </motion.div>
