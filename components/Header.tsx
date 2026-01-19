@@ -24,13 +24,25 @@ const Header: React.FC = () => {
         isScrolled ? "bg-zinc-900/90 backdrop-blur-sm" : ""
       )}
     >
-      <header className="max-w-5xl mx-auto flex justify-between items-center py-4 text-zinc-300">
+      <header
+        className="
+          mx-auto flex max-w-5xl items-center justify-between py-4 text-zinc-300
+        "
+      >
         <Link
           href="/"
-          className="text-lg leading-none font-bold tracking-tight flex items-center gap-2"
+          className="
+            flex items-center gap-2 text-lg leading-none font-bold
+            tracking-tight
+          "
         >
           <span>100KDevJobs</span>
-          <span className="font-mono text-zinc-200 bg-green-800 rounded-full px-3 py-1.5 text-xs leading-none">
+          <span
+            className="
+              rounded-full bg-green-800 px-3 py-1.5 font-mono text-xs
+              leading-none text-zinc-200
+            "
+          >
             $ 100K+
           </span>
         </Link>
@@ -38,7 +50,12 @@ const Header: React.FC = () => {
           <Link href="/faq/">FAQ</Link>
           <Link
             href={"/post-job/"}
-            className="text-sm rounded-xl text-zinc-800 bg-zinc-200 hover:bg-zinc-400 transition-colors focus:bg-zinc-400 outline-none py-2 px-7 cursor-pointer font-medium"
+            className="
+              cursor-pointer rounded-xl bg-zinc-200 px-7 py-2 text-sm
+              font-medium text-zinc-800 transition-colors outline-none
+              hover:bg-zinc-400
+              focus:bg-zinc-400
+            "
           >
             Post a Job
           </Link>

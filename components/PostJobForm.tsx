@@ -73,7 +73,7 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="title"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Job Title
           </label>
@@ -81,11 +81,15 @@ const PostJobForm: React.FC = () => {
             id="title"
             type="text"
             {...form.register("title")}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
             placeholder="Senior Software Engineer"
           />
           {form.formState.errors.title && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.title.message}
             </p>
           )}
@@ -94,19 +98,23 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Job Description
           </label>
           <textarea
             id="description"
             {...form.register("description")}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
             placeholder="Detailed job description..."
             rows={3}
           />
           {form.formState.errors.description && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.description.message}
             </p>
           )}
@@ -115,7 +123,7 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="link"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Application Link
           </label>
@@ -123,11 +131,15 @@ const PostJobForm: React.FC = () => {
             id="link"
             type="url"
             {...form.register("link")}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
             placeholder="https://..."
           />
           {form.formState.errors.link && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.link.message}
             </p>
           )}
@@ -136,7 +148,7 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="salary"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Annual Salary (USD)
           </label>
@@ -144,11 +156,15 @@ const PostJobForm: React.FC = () => {
             id="salary"
             type="number"
             {...form.register("salary", { valueAsNumber: true })}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
             placeholder="150000"
           />
           {form.formState.errors.salary && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.salary.message}
             </p>
           )}
@@ -157,7 +173,7 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="company"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Company Name
           </label>
@@ -165,11 +181,15 @@ const PostJobForm: React.FC = () => {
             id="company"
             type="text"
             {...form.register("company")}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
             placeholder="Company Inc."
           />
           {form.formState.errors.company && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.company.message}
             </p>
           )}
@@ -178,7 +198,7 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="location"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Location
           </label>
@@ -186,11 +206,15 @@ const PostJobForm: React.FC = () => {
             id="location"
             type="text"
             {...form.register("location")}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
             placeholder="San Francisco, CA"
           />
           {form.formState.errors.location && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.location.message}
             </p>
           )}
@@ -199,21 +223,25 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="location_type"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Location Type
           </label>
           <select
             id="location_type"
             {...form.register("location_type")}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
           >
             <option value="on-site">On-site</option>
             <option value="remote">Remote</option>
             <option value="hybrid">Hybrid</option>
           </select>
           {form.formState.errors.location_type && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.location_type.message}
             </p>
           )}
@@ -222,14 +250,18 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="type"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Job Type
           </label>
           <select
             id="type"
             {...form.register("type")}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
           >
             <option value="full-time">Full-time</option>
             <option value="part-time">Part-time</option>
@@ -239,7 +271,7 @@ const PostJobForm: React.FC = () => {
             <option value="volunteer">Volunteer</option>
           </select>
           {form.formState.errors.type && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.type.message}
             </p>
           )}
@@ -248,7 +280,7 @@ const PostJobForm: React.FC = () => {
         <div>
           <label
             htmlFor="category"
-            className="block text-sm font-medium text-zinc-300 mb-2"
+            className="mb-2 block text-sm font-medium text-zinc-300"
           >
             Job Category
           </label>
@@ -256,11 +288,15 @@ const PostJobForm: React.FC = () => {
             id="category"
             type="text"
             {...form.register("category")}
-            className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+            className="
+              w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+              text-sm text-zinc-100
+              focus:ring-1 focus:ring-green-500 focus:outline-none
+            "
             placeholder="frontend, backend, full-stack, etc."
           />
           {form.formState.errors.category && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-500">
               {form.formState.errors.category.message}
             </p>
           )}
@@ -270,7 +306,7 @@ const PostJobForm: React.FC = () => {
           <div>
             <label
               htmlFor="experience_min"
-              className="block text-sm font-medium text-zinc-300 mb-2"
+              className="mb-2 block text-sm font-medium text-zinc-300"
             >
               Minimum Experience (years)
             </label>
@@ -280,10 +316,14 @@ const PostJobForm: React.FC = () => {
               min={0}
               max={20}
               {...form.register("experience_min", { valueAsNumber: true })}
-              className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+              className="
+                w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+                text-sm text-zinc-100
+                focus:ring-1 focus:ring-green-500 focus:outline-none
+              "
             />
             {form.formState.errors.experience_min && (
-              <p className="text-red-500 text-sm mt-1">
+              <p className="mt-1 text-sm text-red-500">
                 {form.formState.errors.experience_min.message}
               </p>
             )}
@@ -292,7 +332,7 @@ const PostJobForm: React.FC = () => {
           <div>
             <label
               htmlFor="experience_max"
-              className="block text-sm font-medium text-zinc-300 mb-2"
+              className="mb-2 block text-sm font-medium text-zinc-300"
             >
               Maximum Experience (years)
             </label>
@@ -302,10 +342,14 @@ const PostJobForm: React.FC = () => {
               min={0}
               max={20}
               {...form.register("experience_max", { valueAsNumber: true })}
-              className="w-full text-sm px-3 py-2.5 bg-zinc-800 border border-zinc-700 rounded-md text-zinc-100 focus:outline-none focus:ring-1 focus:ring-green-500"
+              className="
+                w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2.5
+                text-sm text-zinc-100
+                focus:ring-1 focus:ring-green-500 focus:outline-none
+              "
             />
             {form.formState.errors.experience_max && (
-              <p className="text-red-500 text-sm mt-1">
+              <p className="mt-1 text-sm text-red-500">
                 {form.formState.errors.experience_max.message}
               </p>
             )}
@@ -315,7 +359,12 @@ const PostJobForm: React.FC = () => {
 
       <button
         type="submit"
-        className="w-full py-2.5 text-sm text-zinc-200 bg-green-700 hover:bg-green-800 focus:bg-green-800 rounded-lg transition-colors outline-none cursor-pointer font-medium"
+        className="
+          w-full cursor-pointer rounded-lg bg-green-700 py-2.5 text-sm
+          font-medium text-zinc-200 transition-colors outline-none
+          hover:bg-green-800
+          focus:bg-green-800
+        "
       >
         Submit Job
       </button>

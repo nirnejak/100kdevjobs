@@ -48,12 +48,15 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
   const [view, setView] = React.useState<"rows" | "grid">("rows")
 
   return (
-    <section className="max-w-5xl mx-auto mb-20">
+    <section className="mx-auto mb-20 max-w-5xl">
       <motion.form
         initial={{ opacity: 0, translateY: 10 }}
         whileInView={{ opacity: 1, translateY: 0 }}
         transition={{ ...BASE_TRANSITION, delay: 0.3 }}
-        className="mb-8 grid grid-cols-1 md:grid-cols-6 gap-3"
+        className="
+          mb-8 grid grid-cols-1 gap-3
+          md:grid-cols-6
+        "
         onSubmit={(e) => {
           e.preventDefault()
           handleSearch()
@@ -65,9 +68,16 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             placeholder="Search"
             value={filters.search}
             onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-            className="bg-zinc-800 w-full py-2.5 px-3 pl-8 rounded-lg text-zinc-200 outline-hidden text-sm"
+            className="
+              w-full rounded-lg bg-zinc-800 px-3 py-2.5 pl-8 text-sm
+              text-zinc-200 outline-hidden
+            "
           />
-          <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-zinc-400 text-sm">
+          <span
+            className="
+              absolute top-1/2 left-2.5 -translate-y-1/2 text-sm text-zinc-400
+            "
+          >
             <MagnifyingGlass size={16} />
           </span>
         </div>
@@ -79,9 +89,16 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             onChange={(e) =>
               setFilters({ ...filters, location: e.target.value })
             }
-            className="bg-zinc-800 w-full py-2.5 px-3 pl-8 rounded-lg text-zinc-200 outline-hidden text-sm"
+            className="
+              w-full rounded-lg bg-zinc-800 px-3 py-2.5 pl-8 text-sm
+              text-zinc-200 outline-hidden
+            "
           />
-          <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-zinc-400 text-sm">
+          <span
+            className="
+              absolute top-1/2 left-2.5 -translate-y-1/2 text-sm text-zinc-400
+            "
+          >
             <MapPin size={16} />
           </span>
         </div>
@@ -96,9 +113,16 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                 experience_min: parseInt(e.target.value),
               })
             }
-            className="bg-zinc-800 w-full py-2.5 px-3 pl-8 rounded-lg text-zinc-200 outline-hidden text-sm"
+            className="
+              w-full rounded-lg bg-zinc-800 px-3 py-2.5 pl-8 text-sm
+              text-zinc-200 outline-hidden
+            "
           />
-          <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-zinc-400 text-sm">
+          <span
+            className="
+              absolute top-1/2 left-2.5 -translate-y-1/2 text-sm text-zinc-400
+            "
+          >
             <Briefcase size={16} />
           </span>
         </div>
@@ -110,15 +134,28 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             onChange={(e) =>
               setFilters({ ...filters, salary: parseInt(e.target.value) })
             }
-            className="bg-zinc-800 w-full py-2.5 px-3 pl-8 rounded-lg text-zinc-200 outline-hidden text-sm"
+            className="
+              w-full rounded-lg bg-zinc-800 px-3 py-2.5 pl-8 text-sm
+              text-zinc-200 outline-hidden
+            "
           />
-          <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-zinc-400 text-sm">
+          <span
+            className="
+              absolute top-1/2 left-2.5 -translate-y-1/2 text-sm text-zinc-400
+            "
+          >
             <CurrencyDollar size={16} />
           </span>
         </div>
         <button
           onClick={() => handleSearch()}
-          className="py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm text-zinc-200 bg-green-700 hover:bg-green-800 focus:bg-green-800 transition-colors outline-none cursor-pointer font-medium"
+          className="
+            flex cursor-pointer items-center justify-center gap-2 rounded-lg
+            bg-green-700 py-2.5 text-sm font-medium text-zinc-200
+            transition-colors outline-none
+            hover:bg-green-800
+            focus:bg-green-800
+          "
         >
           <span>Search Jobs</span>
           <MagnifyingGlass size={16} />
@@ -128,22 +165,22 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
         initial={{ opacity: 0, translateY: 10 }}
         whileInView={{ opacity: 1, translateY: 0 }}
         transition={{ ...BASE_TRANSITION, delay: 0.4 }}
-        className="flex justify-between items-center mb-4"
+        className="mb-4 flex items-center justify-between"
       >
-        <p className="text-zinc-200 text-sm">
+        <p className="text-sm text-zinc-200">
           {filteredJobs.length} jobs found
         </p>
-        <div className="text-zinc-200 text-sm grid grid-cols-2 relative gap-2">
+        <div className="relative grid grid-cols-2 gap-2 text-sm text-zinc-200">
           <button
             onClick={() => setView("rows")}
-            className="flex items-center gap-2 px-2 py-1.5 cursor-pointer"
+            className="flex cursor-pointer items-center gap-2 px-2 py-1.5"
           >
             <Rows size={16} />
             <span>Rows</span>
           </button>
           <button
             onClick={() => setView("grid")}
-            className="flex items-center gap-2 px-2 py-1.5 cursor-pointer"
+            className="flex cursor-pointer items-center gap-2 px-2 py-1.5"
           >
             <GridFour size={16} />
             <span>Grid</span>
@@ -189,7 +226,12 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             href={job.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border flex flex-col border-zinc-600 p-4 hover:border-zinc-700 focus:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 focus:bg-zinc-800 rounded-xl transition-colors outline-hidden group"
+            className="
+              group flex flex-col rounded-xl border border-zinc-600 bg-zinc-900
+              p-4 outline-hidden transition-colors
+              hover:border-zinc-700 hover:bg-zinc-800
+              focus:border-zinc-700 focus:bg-zinc-800
+            "
           >
             <motion.div
               layout
@@ -201,7 +243,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               <motion.div layout>
                 <motion.p
                   layout
-                  className="mb-1 text-zinc-200 text-lg font-semibold"
+                  className="mb-1 text-lg font-semibold text-zinc-200"
                 >
                   {job.title}
                 </motion.p>
@@ -218,21 +260,21 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                     : "grid-cols-2 gap-x-10 gap-y-2 mb-2"
                 )}
               >
-                <motion.p layout className="flex gap-1.5 items-center">
+                <motion.p layout className="flex items-center gap-1.5">
                   <MapPin size={14} />
                   <span>{job.location}</span>
                 </motion.p>
-                <motion.p layout className="flex gap-1.5 items-center">
+                <motion.p layout className="flex items-center gap-1.5">
                   <Clock size={14} />
                   <span className="capitalize">{job.type}</span>
                 </motion.p>
-                <motion.p layout className="flex gap-1.5 items-center">
+                <motion.p layout className="flex items-center gap-1.5">
                   <Briefcase size={14} />
                   <span>
                     {job.experience_min} - {job.experience_max} years
                   </span>
                 </motion.p>
-                <motion.p layout className="flex gap-1.5 items-center ">
+                <motion.p layout className="flex items-center gap-1.5">
                   <CurrencyDollar size={14} />
                   <span>{job.salary.toLocaleString()}</span>
                 </motion.p>
@@ -247,13 +289,18 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             >
               <motion.p
                 layout
-                className="text-zinc-500 flex gap-1.5 items-center flex-wrap"
+                className="flex flex-wrap items-center gap-1.5 text-zinc-500"
               >
                 {job.tags.map((tag, index) => (
                   <motion.span
                     layout
                     key={index}
-                    className="font-mono text-zinc-200 bg-zinc-800 group-hover:bg-zinc-900 group-focus:bg-zinc-900 transition-colors rounded-full px-3 py-1 text-xs "
+                    className="
+                      rounded-full bg-zinc-800 px-3 py-1 font-mono text-xs
+                      text-zinc-200 transition-colors
+                      group-hover:bg-zinc-900
+                      group-focus:bg-zinc-900
+                    "
                   >
                     {tag}
                   </motion.span>
