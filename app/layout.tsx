@@ -2,7 +2,7 @@ import * as React from "react"
 
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
-import { Geist_Mono, Bricolage_Grotesque, DM_Mono } from "next/font/google"
+import { DM_Mono } from "next/font/google"
 
 import { ReactLenis } from "lenis/react"
 
@@ -14,21 +14,9 @@ import BackgroundBeams from "@/components/atoms/BackgroundBeams"
 
 import "./main.css"
 
-const displayFont = Bricolage_Grotesque({
-  variable: "--display-font",
-  subsets: ["latin"],
-  display: "swap",
-})
-
-const sansFont = DM_Mono({
-  variable: "--sans-font",
+const primaryFont = DM_Mono({
+  variable: "--primary-font",
   weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-})
-
-const monoFont = Geist_Mono({
-  variable: "--mono-font",
   subsets: ["latin"],
   display: "swap",
 })
@@ -44,18 +32,13 @@ interface Props {
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <ViewTransitions>
-      <html
-        lang="en"
-        className={classNames(
-          displayFont.variable,
-          sansFont.variable,
-          monoFont.variable
-        )}
-      >
+      <html lang="en" className={classNames(primaryFont.variable)}>
         <head>{renderSchemaTags()}</head>
 
         <ReactLenis root>
-          <body className={"relative overflow-x-hidden bg-zinc-900 font-sans"}>
+          <body
+            className={"relative overflow-x-hidden bg-zinc-900 font-primary"}
+          >
             <Header />
             {children}
 

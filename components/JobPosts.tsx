@@ -69,8 +69,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             value={filters.search}
             onChange={(e) => setFilters({ ...filters, search: e.target.value })}
             className="
-              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm text-zinc-200
-              outline-hidden
+              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm tracking-tight
+              text-zinc-200 outline-hidden
             "
           />
           <span
@@ -90,8 +90,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               setFilters({ ...filters, location: e.target.value })
             }
             className="
-              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm text-zinc-200
-              outline-hidden
+              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm tracking-tight
+              text-zinc-200 outline-hidden
             "
           />
           <span
@@ -114,8 +114,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               })
             }
             className="
-              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm text-zinc-200
-              outline-hidden
+              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm tracking-tight
+              text-zinc-200 outline-hidden
             "
           />
           <span
@@ -135,8 +135,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               setFilters({ ...filters, salary: parseInt(e.target.value) })
             }
             className="
-              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm text-zinc-200
-              outline-hidden
+              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm tracking-tight
+              text-zinc-200 outline-hidden
             "
           />
           <span
@@ -151,8 +151,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           onClick={() => handleSearch()}
           className="
             flex cursor-pointer items-center justify-center gap-2 bg-green-700
-            py-2.5 text-sm font-medium text-zinc-200 transition-colors
-            outline-none
+            py-2.5 text-sm font-medium tracking-tight text-zinc-200
+            transition-colors outline-none
             hover:bg-green-800
             focus:bg-green-800
           "
@@ -167,7 +167,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
         transition={{ ...BASE_TRANSITION, delay: 0.4 }}
         className="mb-4 flex items-center justify-between"
       >
-        <p className="text-sm text-zinc-200">
+        <p className="text-sm tracking-tight text-zinc-200">
           {filteredJobs.length} jobs found
         </p>
         <div className="relative grid grid-cols-2 gap-2 text-sm text-zinc-200">
@@ -258,25 +258,37 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
                 className={classNames(
                   "grid text-zinc-200 text-sm",
                   view === "rows"
-                    ? "grid-cols-4 gap-4"
+                    ? "grid-cols-4 gap-6"
                     : "grid-cols-2 gap-x-10 gap-y-2 mb-2"
                 )}
               >
-                <motion.p layout className="flex items-center gap-1.5">
+                <motion.p
+                  layout
+                  className="flex items-center gap-1.5 tracking-tight"
+                >
                   <MapPin size={14} />
                   <span>{job.location}</span>
                 </motion.p>
-                <motion.p layout className="flex items-center gap-1.5">
+                <motion.p
+                  layout
+                  className="flex items-center gap-1.5 tracking-tight"
+                >
                   <Clock size={14} />
                   <span className="capitalize">{job.type}</span>
                 </motion.p>
-                <motion.p layout className="flex items-center gap-1.5">
+                <motion.p
+                  layout
+                  className="flex items-center gap-1.5 tracking-tight"
+                >
                   <Briefcase size={14} />
                   <span>
-                    {job.experience_min} - {job.experience_max} years
+                    {job.experience_min}-{job.experience_max} years
                   </span>
                 </motion.p>
-                <motion.p layout className="flex items-center gap-1.5">
+                <motion.p
+                  layout
+                  className="flex items-center gap-1.5 tracking-tight"
+                >
                   <CurrencyDollar size={14} />
                   <span>{job.salary.toLocaleString()}</span>
                 </motion.p>

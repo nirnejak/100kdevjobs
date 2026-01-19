@@ -29,9 +29,7 @@ input[type="number"] {
 }
 
 @theme {
-  --font-display: var(--display-font);
-  --font-sans: var(--sans-font);
-  --font-mono: var(--mono-font);
+  --font-primary: var(--primary-font);
 
   --animate-swing: swing 1s infinite ease-in-out alternate;
   --animate-marquee: marquee 25s linear infinite;
