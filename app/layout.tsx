@@ -2,8 +2,9 @@ import * as React from "react"
 
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
-
 import { Geist_Mono, Bricolage_Grotesque, Onest } from "next/font/google"
+
+import { ReactLenis } from "lenis/react"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -52,14 +53,16 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       >
         <head>{renderSchemaTags()}</head>
 
-        <body className={"relative overflow-x-hidden bg-zinc-900 font-sans"}>
-          <Header />
-          {children}
+        <ReactLenis root>
+          <body className={"relative overflow-x-hidden bg-zinc-900 font-sans"}>
+            <Header />
+            {children}
 
-          <section className="absolute inset-0 -z-10 h-[70vh]">
-            <BackgroundBeams />
-          </section>
-        </body>
+            <section className="absolute inset-0 -z-10 h-[70vh]">
+              <BackgroundBeams />
+            </section>
+          </body>
+        </ReactLenis>
       </html>
     </ViewTransitions>
   )
