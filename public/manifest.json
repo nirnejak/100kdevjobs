@@ -1,22 +1,22 @@
 {
-    "theme_color": "#000000",
-    "background_color": "#000000",
-    "display": "standalone",
-    "scope": "/",
-    "start_url": "/",
-    "name": "100k Dev Jobs",
-    "short_name": "100k Dev Jobs",
-    "description": "Find tech jobs that pays $100k+ in USA, Europe, India. ",
-    "icons": [
-        {
-            "src": "/icons/icon-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        },
-        {
-            "src": "/icons/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "100k Dev Jobs",
+  "short_name": "100k Dev Jobs",
+  "description": "Find tech jobs that pays $100k+ in USA, Europe, India. ",
+  "icons": [
+    {
+      "src": "/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
