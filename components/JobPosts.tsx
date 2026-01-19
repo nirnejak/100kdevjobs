@@ -69,8 +69,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             value={filters.search}
             onChange={(e) => setFilters({ ...filters, search: e.target.value })}
             className="
-              w-full rounded-lg bg-zinc-800 px-3 py-2.5 pl-8 text-sm
-              text-zinc-200 outline-hidden
+              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm text-zinc-200
+              outline-hidden
             "
           />
           <span
@@ -90,8 +90,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               setFilters({ ...filters, location: e.target.value })
             }
             className="
-              w-full rounded-lg bg-zinc-800 px-3 py-2.5 pl-8 text-sm
-              text-zinc-200 outline-hidden
+              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm text-zinc-200
+              outline-hidden
             "
           />
           <span
@@ -114,8 +114,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               })
             }
             className="
-              w-full rounded-lg bg-zinc-800 px-3 py-2.5 pl-8 text-sm
-              text-zinc-200 outline-hidden
+              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm text-zinc-200
+              outline-hidden
             "
           />
           <span
@@ -135,8 +135,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               setFilters({ ...filters, salary: parseInt(e.target.value) })
             }
             className="
-              w-full rounded-lg bg-zinc-800 px-3 py-2.5 pl-8 text-sm
-              text-zinc-200 outline-hidden
+              w-full bg-zinc-800 px-3 py-2.5 pl-8 text-sm text-zinc-200
+              outline-hidden
             "
           />
           <span
@@ -150,9 +150,9 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
         <button
           onClick={() => handleSearch()}
           className="
-            flex cursor-pointer items-center justify-center gap-2 rounded-lg
-            bg-green-700 py-2.5 text-sm font-medium text-zinc-200
-            transition-colors outline-none
+            flex cursor-pointer items-center justify-center gap-2 bg-green-700
+            py-2.5 text-sm font-medium text-zinc-200 transition-colors
+            outline-none
             hover:bg-green-800
             focus:bg-green-800
           "
@@ -188,7 +188,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
           <motion.div
             layout
             className={classNames(
-              "absolute h-full top-0 bg-zinc-800 rounded-lg w-1/2 -z-10",
+              "absolute h-full top-0 bg-zinc-800 w-1/2 -z-10",
               view === "rows" ? "left-0" : "right-0"
             )}
           />
@@ -227,8 +227,8 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="
-              group flex flex-col rounded-xl border border-zinc-600 bg-zinc-900
-              p-4 outline-hidden transition-colors
+              group flex flex-col border border-dashed border-zinc-600
+              bg-zinc-900 p-4 outline-hidden transition-colors
               hover:border-zinc-700 hover:bg-zinc-800
               focus:border-zinc-700 focus:bg-zinc-800
             "
@@ -243,11 +243,13 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               <motion.div layout>
                 <motion.p
                   layout
-                  className="mb-1 text-lg font-semibold text-zinc-200"
+                  className="
+                    mb-1 text-lg font-semibold tracking-tight text-zinc-200
+                  "
                 >
                   {job.title}
                 </motion.p>
-                <motion.p layout className="text-zinc-500">
+                <motion.p layout className="tracking-tighter text-zinc-500">
                   {job.company}
                 </motion.p>
               </motion.div>
@@ -309,7 +311,7 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
               <motion.span
                 layout
                 className={classNames(
-                  "rounded-lg flex items-center justify-center gap-2 text-sm text-zinc-200 bg-zinc-800 group-hover:bg-green-700 transition-colors group-focus:bg-green-700 outline-none py-2 cursor-pointer",
+                  "flex items-center justify-center gap-2 text-sm text-zinc-200 bg-zinc-800 group-hover:bg-green-700 transition-colors group-focus:bg-green-700 outline-none py-2 cursor-pointer",
                   view === "rows" ? "w-40" : "w-full"
                 )}
               >
