@@ -11,7 +11,7 @@ const HomeHero: React.FC = () => {
     <section className="relative mb-44 flex flex-col items-center">
       <h1
         className="
-          font-display mb-6 text-center text-5xl/tight font-bold
+          mb-6 text-center font-display text-5xl/tight font-bold
           tracking-tighter text-zinc-300
         "
       >

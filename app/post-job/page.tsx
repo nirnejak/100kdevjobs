@@ -21,7 +21,7 @@ const PostJobPage: React.FC = () => {
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0 }}
           className="
-            font-display mb-12 text-center text-4xl/tight font-bold
+            mb-12 text-center font-display text-4xl/tight font-bold
             tracking-tighter text-zinc-300
           "
         >

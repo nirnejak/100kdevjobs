@@ -4,7 +4,11 @@ import { motion } from "motion/react"
 
 import classNames from "@/utils/classNames"
 
-const BackgroundBeams = React.memo(({ className }: { className?: string }) => {
+interface Props {
+  className?: string
+}
+
+const BackgroundBeamsBase: React.FC<Props> = ({ className }) => {
   const paths = [
     "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
     "M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867",
@@ -60,7 +64,7 @@ const BackgroundBeams = React.memo(({ className }: { className?: string }) => {
   return (
     <div
       className={classNames(
-        "absolute inset-0 flex h-full w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px] -z-10",
+        "absolute inset-0 flex h-full w-full items-center justify-center mask-no-repeat mask-size-[40px] -z-10",
         className
       )}
     >
@@ -135,6 +139,8 @@ const BackgroundBeams = React.memo(({ className }: { className?: string }) => {
       </svg>
     </div>
   )
-})
+}
+
+const BackgroundBeams = React.memo(BackgroundBeamsBase)
 
 export default BackgroundBeams

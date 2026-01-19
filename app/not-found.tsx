@@ -17,7 +17,7 @@ const NotFound: React.FC = () => {
         <div className="text-center">
           <h1
             className="
-              font-display mb-3 text-5xl font-bold tracking-tighter
+              mb-3 font-display text-5xl font-bold tracking-tighter
               text-zinc-200
             "
           >

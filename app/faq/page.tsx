@@ -27,7 +27,7 @@ const FAQPage: React.FC = () => {
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0 }}
           className="
-            font-display text-center text-4xl/tight font-bold tracking-tighter
+            text-center font-display text-4xl/tight font-bold tracking-tighter
             text-zinc-300
           "
         >
@@ -96,8 +96,8 @@ const FAQPage: React.FC = () => {
                 Will you ever charge developers for using the platform?
               </AccordionTrigger>
               <AccordionContent>
-                No, I'm committed to never charging developers. My focus is on
-                providing a great experience for you while monetizing through
+                No, I&apos;m committed to never charging developers. My focus is
+                on providing a great experience for you while monetizing through
                 employers because they can afford and have budget and every team
                 needs talented people.
               </AccordionContent>
