@@ -172,10 +172,20 @@ const JobPosts: React.FC<Props> = ({ jobs }) => {
         transition={{ ...BASE_TRANSITION, delay: 0.4 }}
         className="mb-4 flex items-center justify-between"
       >
-        <p className="text-sm tracking-tight text-zinc-200">
+        <p
+          className="
+            mx-auto text-sm tracking-tight text-zinc-200
+            md:mx-0
+          "
+        >
           {filteredJobs.length} jobs found
         </p>
-        <div className="relative grid grid-cols-2 gap-2 text-sm text-zinc-200">
+        <div
+          className="
+            relative hidden grid-cols-2 gap-2 text-sm text-zinc-200
+            md:grid
+          "
+        >
           <button
             onClick={() => setView("rows")}
             className="flex cursor-pointer items-center gap-2 px-2 py-1.5"
