@@ -2,7 +2,7 @@ import * as React from "react"
 
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
-import { DM_Mono } from "next/font/google"
+import { Geist_Mono } from "next/font/google"
 
 import { ReactLenis } from "lenis/react"
 
@@ -14,9 +14,8 @@ import BackgroundBeams from "@/components/atoms/BackgroundBeams"
 
 import "./main.css"
 
-const primaryFont = DM_Mono({
+const primaryFont = Geist_Mono({
   variable: "--primary-font",
-  weight: "400",
   subsets: ["latin"],
   display: "swap",
 })
