@@ -12,7 +12,7 @@ import { renderSchemaTags } from "@/utils/schema"
 import Header from "@/components/Header"
 import BackgroundBeams from "@/components/atoms/BackgroundBeams"
 
-import "../styles/main.css"
+import "./main.css"
 
 const displayFont = Bricolage_Grotesque({
   variable: "--display-font",
