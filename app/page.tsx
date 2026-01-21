@@ -3,7 +3,7 @@ import { Suspense } from "react"
 
 import { getMetadata } from "@/utils/metadata"
 
-import { db } from "@/lib/db"
+import { db } from "@/utils/db"
 import { jobs } from "@/app/api/schema"
 
 import JobPosts, { type Job } from "@/components/JobPosts"
