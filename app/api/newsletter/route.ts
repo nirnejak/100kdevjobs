@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 import { eq } from "drizzle-orm"
 
-import { db } from "@/drizzle.config"
+import { db } from "@/lib/db"
 import { job_subscribers } from "@/app/api/schema"
 
 export async function POST(request: NextRequest) {

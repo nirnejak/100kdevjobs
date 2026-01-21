@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
-import { db } from "@/drizzle.config"
+import { db } from "@/lib/db"
 import { jobs } from "@/app/api/schema"
 
 export async function POST(request: NextRequest) {
