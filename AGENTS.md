@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Guidelines and commands for agentic coding agents working in this Next.js TypeScript SaaS repository.
+Guidelines and commands for agentic coding agents working in this 100kDevJobs repository.
 
 ## Development Commands
 
