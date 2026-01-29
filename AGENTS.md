@@ -1,222 +1,176 @@
-# Agent Guidelines for 100K Dev Jobs Repository
+# AGENTS.md
 
-## Overview
+Guidelines and commands for agentic coding agents working in this Next.js TypeScript SaaS repository.
 
-This is a Next.js 16 application built with React 19, TypeScript, Tailwind CSS 4, and Drizzle ORM. The project focuses on job listings for high-paying developer positions ($100K+).
+## Development Commands
 
-## Build, Lint, and Test Commands
+### Core Commands
 
-### Development
-
-- `bun run dev` - Start development server
+- `bun run dev` - Start development server (http://localhost:3000)
 - `bun run build` - Build for production
-- `bun start` - Start production server
-
-### Code Quality
-
-- `bun run lint` - Run ESLint on all files
-- `bun run lint:fix` - Auto-fix ESLint issues
-- `bun run format` - Format all files with Prettier
-- `bun run format:check` - Check Prettier formatting
+- `bun run start` - Start production server
+- `bun run lint` - Run ESLint
+- `bun run lint:fix` - Run ESLint with automatic fixes
+- `bun run format` - Format with Prettier (includes Tailwind sorting)
+- `bun run format:check` - Check if files are formatted correctly
 - `bun run type-check` - Run TypeScript type checking
 
-### Database
+### Database Commands (Drizzle ORM)
 
-- `bun run db:generate` - Generate Drizzle migrations
-- `bun run db:migrate` - Run database migrations
-- `bun run db:push` - Push schema changes to database
+- `bun run db:generate` - Generate migrations from schema changes
+- `bun run db:migrate` - Run pending migrations
+- `bun run db:push` - Push schema changes directly to database (development only)
+- `bun run db:studio` - Open Drizzle Studio for database management
 
-### Testing
+### Testing Commands
 
-This project currently has no test framework configured. When adding tests:
+**Note**: No testing framework configured. To add Vitest:
 
-- Use Jest or Vitest with React Testing Library
-- Run tests with `bun run test`
-- Run a single test file: `bun run test -- path/to/test.spec.ts`
-- Run tests in watch mode: `bun run test -- --watch`
-
-## Code Style Guidelines
-
-### TypeScript Configuration
-
-- **Target**: ES2017
-- **Module Resolution**: Bundler (for Next.js)
-- **JSX**: react-jsx (automatic runtime)
-- **Strict Mode**: Enabled (includes strictNullChecks)
-- **Path Aliases**: `@/*` maps to `./*`
-
-### Formatting (Prettier)
-
-```json
-{
-  "endOfLine": "lf",
-  "semi": false,
-  "singleQuote": false,
-  "tabWidth": 2,
-  "trailingComma": "es5"
-}
+```bash
+bun add -D vitest @testing-library/react @testing-library/jest-dom jsdom
 ```
 
-### Linting (ESLint)
+Once configured, use:
 
-- Uses `eslint-config-next` for Next.js best practices
-- Includes `eslint-config-prettier` for Prettier compatibility
-- `better-tailwindcss` plugin for Tailwind CSS linting
-- `promise` plugin for Promise-related rules
-- Integrates with Prettier via `eslint-plugin-prettier`
+- `bun run test` - Run all tests
+- `bun run test:watch` - Run tests in watch mode
+- `bun run test:coverage` - Run tests with coverage
+- `bun run test -- path/to/test.spec.ts` - Run single test file
+
+## Code Style Guidelines
 
 ### File Structure
 
 ```
-/
-├── app/                 # Next.js app router pages
-├── components/          # React components
-│   ├── atoms/          # Atomic design pattern components
-│   └── *.tsx           # Page-specific components
-├── hooks/              # Custom React hooks
-├── utils/              # Utility functions
-├── @types/             # TypeScript type definitions
-├── drizzle/            # Database migrations and config
-└── public/             # Static assets
+app/                    # Next.js App Router (pages, API routes, layouts)
+├── admin/              # Admin pages
+├── api/                # API routes (auth, schema, waitlist)
+├── auth/               # Authentication pages
+├── blog/               # Blog/MDX content
+├── main.css            # Global CSS with Tailwind v4 and custom animations
+└── layout.tsx          # Root layout with font loading and theme setup
+components/             # React components (organized by atomic design)
+├── atoms/              # Basic UI components (Button, etc.)
+hooks/                  # Custom React hooks
+utils/                  # Utility functions (classNames, db, schema)
+@types/                 # TypeScript type definitions
+public/                 # Static assets
 ```
+
+### Import Patterns
+
+```typescript
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+import classNames from "@/utils/classNames"
+import * as motion from "motion/react-client"
+```
+
+- Use `import * as React from "react"` (namespace imports)
+- Use absolute imports with `@/` prefix for internal files
+- Group imports: React → external libraries → internal modules
+- Use type-only imports (`import type { Viewport } from "next"`)
 
 ### Component Patterns
 
-#### React Components
-
-- Use functional components with hooks
-- Add `"use client"` directive for client components
-- Use PascalCase for component names
-- Define props interfaces with `interface Props`
-- Export as default export
-
-```tsx
-interface Props {
-  jobs: Job[]
+```typescript
+export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  VariantProps<typeof buttonVariants> {
+  asChild?: boolean
 }
 
-const JobPosts: React.FC<Props> = ({ jobs }) => {
-  // component logic
-}
+const Button: React.FC<Props> = ({ children, className, variant, size, ...props }) => (
+  <button className={classNames(buttonVariants({ variant, size }), className)} {...props}>
+    {children}
+  </button>
+)
 
-export default JobPosts
+export default Button
 ```
 
-#### Hooks
-
-- Prefix custom hooks with `use`
-- Use camelCase for hook names
-- Place in `hooks/` directory
-- Export as default export
-
-```tsx
-const useJobFilters = (jobs: Job[]) => {
-  // hook logic
-}
-
-export default useJobFilters
-```
-
-### Import Conventions
-
-- Use absolute imports with `@/` alias
-- Group imports by type:
-  1. React imports
-  2. External libraries
-  3. Internal utilities/hooks
-  4. Local components/types
-
-```tsx
-import * as React from "react"
-import { motion } from "motion/react"
-import { MapPin } from "@phosphor-icons/react"
-
-import { BASE_TRANSITION } from "@/utils/animation"
-import classNames from "@/utils/classNames"
-
-import { Job } from "@/components/JobPosts"
-```
+- Use functional components with `React.FC<Props>`
+- Props extend HTML attributes and VariantProps from CVA
+- Export interface as `Props`, component as default export
+- Use `classNames` utility for conditional styling
 
 ### Naming Conventions
 
-- **Components**: PascalCase (e.g., `JobPosts`, `Header`)
-- **Hooks**: camelCase with `use` prefix (e.g., `useJobFilters`)
-- **Functions/Variables**: camelCase (e.g., `handleSearch`, `filteredJobs`)
-- **Types/Interfaces**: PascalCase (e.g., `Job`, `FILTERS`)
-- **Constants**: UPPER_SNAKE_CASE (e.g., `BASE_TRANSITION`)
+- **Components**: PascalCase (`Button`, `UserCard`)
+- **Hooks**: camelCase with `use` prefix (`useTheme`)
+- **Variables**: camelCase (`buttonVariants`)
+- **Constants**: UPPER_SNAKE_CASE (`BASE_URL`)
+- **Types**: PascalCase (`Props`, `ApiResponse<T>`)
 - **Files**: PascalCase for components, camelCase for utilities
+- **Database**: snake_case for table/column names
 
-### Styling (Tailwind CSS)
+### TypeScript Guidelines
 
-- Use Tailwind utility classes
-- Use responsive prefixes: `md:`, `lg:`
-- Use `classNames` utility for conditional classes
-- Follow mobile-first approach
-- Use consistent color palette (zinc, green theme)
-- Group related classes logically
+- Strict mode enabled (`strict: true`, `strictNullChecks: true`)
+- Use `interface` for object shapes and component props
+- Use `type` for unions and complex type expressions
+- Use path mapping with `@/*` for absolute imports
+- Include return type annotations for hook functions
 
-```tsx
-className={classNames(
-  "base-classes",
-  isScrolled ? "conditional-class" : ""
-)}
+### Database Patterns
+
+```typescript
+export const user = pgTable("user", {
+  id: text("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  updatedAt: timestamp("updated_at")
+    .$onUpdate(() => new Date())
+    .notNull(),
+})
 ```
 
-### State Management
-
-- Use React hooks for local state
-- Use custom hooks for complex state logic
-- Use URL search params for filter state persistence
-- Prefer `useMemo` for expensive computations
-- Use `useEffect` for side effects
+- Schema-first with Drizzle ORM and Neon PostgreSQL
+- Use foreign keys with cascade delete
+- Implement `$onUpdate` for automatic timestamps
 
 ### Error Handling
 
-- Use TypeScript strict mode for compile-time safety
-- Validate forms with React Hook Form and Zod
-- Handle async operations with proper error boundaries
-- Use try/catch for API calls
-- Provide user-friendly error messages
+```typescript
+export async function POST(request: Request) {
+  try {
+    return NextResponse.json({ message: "Success!" }, { status: 200 })
+  } catch (error) {
+    console.error("Error processing request:", error)
+    return NextResponse.json(
+      { error: "Failed to process request" },
+      { status: 400 }
+    )
+  }
+}
+```
 
-### Database (Drizzle ORM)
+- API routes: Try-catch with `NextResponse.json()`
+- Use `console.error` for logging, never expose sensitive data
+- Use proper HTTP status codes (200, 400, 500)
 
-- Define schemas in `utils/schema.tsx`
-- Use Neon serverless for database connection
-- Run migrations for schema changes
-- Use Drizzle Kit for development workflow
+### Styling Guidelines
 
-### Performance
+- Tailwind CSS v4 with `@theme` directives in `app/main.css`
+- Custom animations using `@keyframes` and `--animate-*` variables
+- Use CSS custom properties (`--sans-font`, `--mono-font`)
+- Use `dark:` prefix for dark mode variants
+- Include `antialiased` for text quality
 
-- Use Next.js Image component for images
-- Implement proper code splitting
-- Use React.memo for expensive components
-- Optimize bundle with dynamic imports
-- Use motion/react for animations with proper transitions
+## Quality Assurance
 
-### Accessibility
+Always run before completing work:
 
-- Use semantic HTML elements
-- Provide proper ARIA labels
-- Ensure keyboard navigation
-- Maintain proper color contrast
-- Use focus management
+- `bun run lint` - No ESLint errors
+- `bun run type-check` - TypeScript passes
+- `bun run format` - Code formatting consistent
+- `bun run build` - Production build succeeds
 
-### Git Workflow
+## Project Features
 
-- Use conventional commits
-- Pre-commit hooks configured with Husky and lint-staged
-- Commit message format: `type(scope): description`
-- Run linting and formatting on pre-commit
-
-### Environment Variables
-
-- Use `.env.local` for local development
-- Prefix with `NEXT_PUBLIC_` for client-side variables
-- Never commit secrets or API keys
-
-### Deployment
-
-- Deploy to Vercel (recommended for Next.js)
-- Use Next.js production build
-- Configure proper environment variables
-- Enable analytics and monitoring
+- Next.js 15+ with App Router, React 19, React Compiler
+- MDX Support, View Transitions
+- Better Auth (session, account, verification tables)
+- Drizzle ORM with PostgreSQL (Neon)
+- Tailwind CSS v4 with custom animations
+- Framer Motion for animations
+- Bun package manager
+- Husky pre-commit hooks with lint-staged
