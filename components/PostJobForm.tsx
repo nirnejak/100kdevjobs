@@ -3,32 +3,10 @@ import * as React from "react"
 
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
 import { toast } from "sonner"
 
-const jobFormSchema = z.object({
-  title: z.string().min(5, "Title must be at least 5 characters"),
-  description: z.string().min(50, "Description must be at least 50 characters"),
-  link: z.string().url("Must be a valid URL"),
-  salary: z.number().min(100000, "Salary must be at least $100,000"),
-  company: z.string().min(2, "Company name must be at least 2 characters"),
-  location: z.string().min(2, "Location must be at least 2 characters"),
-  location_type: z.enum(["on-site", "remote", "hybrid"]),
-  type: z.enum([
-    "full-time",
-    "part-time",
-    "contractor",
-    "internship",
-    "freelance",
-    "volunteer",
-  ]),
-  category: z.string().min(2, "Category must be at least 2 characters"),
-  tags: z.array(z.string()).optional(),
-  experience_min: z.number().min(0).max(20),
-  experience_max: z.number().min(0).max(20),
-})
-
-type JobFormValues = z.infer<typeof jobFormSchema>
+import { submitJob } from "@/app/post-job/actions"
+import { jobFormSchema, type JobFormValues } from "@/utils/jobFormSchema"
 
 const PostJobForm: React.FC = () => {
   const form = useForm<JobFormValues>({
@@ -42,20 +20,13 @@ const PostJobForm: React.FC = () => {
 
   const onSubmit = async (data: JobFormValues) => {
     try {
-      const response = await fetch("/api/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
+      const result = await submitJob(data)
 
-      if (!response.ok) {
-        const error = await response.json()
-        throw new Error(error.message || "Failed to submit job")
+      if (!result.success) {
+        throw new Error(result.message)
       }
 
-      toast.success("Job submitted successfully!")
+      toast.success(result.message)
       form.reset()
     } catch (error) {
       toast.error(
