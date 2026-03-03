@@ -1,16 +1,13 @@
-import * as React from "react"
-
 import * as motion from "motion/react-client"
-
-import { getMetadata } from "@/utils/metadata"
-import { BASE_TRANSITION } from "@/utils/animation"
-
+import type * as React from "react"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/atoms/Accordion"
+import { BASE_TRANSITION } from "@/utils/animation"
+import { getMetadata } from "@/utils/metadata"
 
 export const metadata = getMetadata({
   path: "/faq/",
@@ -26,9 +23,7 @@ const FAQPage: React.FC = () => {
           initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0 }}
-          className="
-            text-center text-4xl/tight font-bold tracking-tighter text-zinc-300
-          "
+          className="text-center font-bold text-4xl/tight text-zinc-300 tracking-tighter"
         >
           Frequently Asked Questions
         </motion.h1>
@@ -39,12 +34,9 @@ const FAQPage: React.FC = () => {
           initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0.1 }}
-          className="
-            mx-auto w-full max-w-3xl px-4
-            md:px-0
-          "
+          className="mx-auto w-full max-w-3xl px-4 md:px-0"
         >
-          <h2 className="mb-4 text-xl font-bold tracking-tight text-zinc-200">
+          <h2 className="mb-4 font-bold text-xl text-zinc-200 tracking-tight">
             For Developers
           </h2>
           <Accordion
@@ -131,12 +123,9 @@ const FAQPage: React.FC = () => {
           initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0.2 }}
-          className="
-            mx-auto w-full max-w-3xl px-4
-            md:px-0
-          "
+          className="mx-auto w-full max-w-3xl px-4 md:px-0"
         >
-          <h2 className="mb-4 text-xl font-bold tracking-tight text-zinc-200">
+          <h2 className="mb-4 font-bold text-xl text-zinc-200 tracking-tight">
             For Employers
           </h2>
           <Accordion

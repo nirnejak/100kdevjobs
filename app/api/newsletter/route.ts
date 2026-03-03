@@ -1,6 +1,5 @@
-import { NextRequest, NextResponse } from "next/server"
-
 import { eq } from "drizzle-orm"
+import { type NextRequest, NextResponse } from "next/server"
 
 import { db } from "@/db"
 import { job_subscribers } from "@/db/schema"

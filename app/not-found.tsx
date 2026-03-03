@@ -1,6 +1,5 @@
-import * as React from "react"
-
 import { Link } from "next-view-transitions"
+import type * as React from "react"
 
 import { getMetadata } from "@/utils/metadata"
 
@@ -15,23 +14,14 @@ const NotFound: React.FC = () => {
     <main className="mx-auto max-w-5xl">
       <section className="grid min-h-dvh place-content-center">
         <div className="text-center">
-          <h1 className="mb-4 text-5xl font-bold tracking-tight text-zinc-200">
+          <h1 className="mb-4 font-bold text-5xl text-zinc-200 tracking-tight">
             404
           </h1>
-          <p
-            className="
-              px-10 text-base tracking-tighter text-zinc-300
-              md:px-0
-            "
-          >
+          <p className="px-10 text-base text-zinc-300 tracking-tighter md:px-0">
             The page you&apos;re looking for cannot be found. Go{" "}
             <Link
               href="/"
-              className="
-                font-bold
-                hover:underline
-                focus:underline
-              "
+              className="font-bold hover:underline focus:underline"
             >
               Home
             </Link>

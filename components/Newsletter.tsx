@@ -1,7 +1,7 @@
 "use client"
-import * as React from "react"
 
 import * as motion from "motion/react-client"
+import * as React from "react"
 
 import { BASE_TRANSITION } from "@/utils/animation"
 
@@ -59,30 +59,16 @@ const Newsletter: React.FC = () => {
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="
-            flex-1 bg-zinc-800 px-4 py-3 text-sm leading-none tracking-tight
-            text-zinc-200 outline-hidden transition-colors
-            hover:bg-zinc-950/50
-            focus:bg-zinc-950/50
-          "
+          className="flex-1 bg-zinc-800 px-4 py-3 text-sm text-zinc-200 leading-none tracking-tight outline-hidden transition-colors hover:bg-zinc-950/50 focus:bg-zinc-950/50"
         />
         <button
           type="submit"
-          className="
-            bg-green-800 px-4 py-3 text-sm leading-none font-semibold
-            tracking-tight text-zinc-200 outline-hidden transition-colors
-            hover:bg-green-900
-            focus:bg-green-900
-          "
+          className="bg-green-800 px-4 py-3 font-semibold text-sm text-zinc-200 leading-none tracking-tight outline-hidden transition-colors hover:bg-green-900 focus:bg-green-900"
         >
           Get notified
         </button>
       </form>
-      <p
-        className="
-          text-center text-xs font-semibold tracking-tight text-zinc-400
-        "
-      >
+      <p className="text-center font-semibold text-xs text-zinc-400 tracking-tight">
         {success || error || "No spam. Unsubscribe anytime."}
       </p>
     </motion.div>

@@ -1,16 +1,13 @@
-import * as React from "react"
-
-import type { Viewport } from "next"
-import { ViewTransitions } from "next-view-transitions"
-import { Geist_Mono } from "next/font/google"
-
 import { ReactLenis } from "lenis/react"
 
+import type { Viewport } from "next"
+import { Geist_Mono } from "next/font/google"
+import { ViewTransitions } from "next-view-transitions"
+import type * as React from "react"
+import BackgroundBeams from "@/components/atoms/BackgroundBeams"
+import Header from "@/components/Header"
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
-
-import Header from "@/components/Header"
-import BackgroundBeams from "@/components/atoms/BackgroundBeams"
 
 import "./main.css"
 

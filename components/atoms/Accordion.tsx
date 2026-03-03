@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { CaretDown } from "@phosphor-icons/react"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import * as React from "react"
 
 import classNames from "@/utils/classNames"
 
@@ -28,17 +28,13 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={classNames(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all bg-zinc-900 px-4 text-left cursor-pointer [&[data-state=open]>svg]:rotate-180",
+        "flex flex-1 cursor-pointer items-center justify-between bg-zinc-900 px-4 py-4 text-left font-medium transition-all [&[data-state=open]>svg]:rotate-180",
         className
       )}
       {...props}
     >
       {children}
-      <CaretDown
-        className="
-          size-4 shrink-0 text-zinc-200 transition-transform duration-200
-        "
-      />
+      <CaretDown className="size-4 shrink-0 text-zinc-200 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))
@@ -50,14 +46,10 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="
-      overflow-hidden
-      data-[state=closed]:animate-accordion-up
-      data-[state=open]:animate-accordion-down
-    "
+    className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
-    <div className={classNames("py-3 px-4", className)}>{children}</div>
+    <div className={classNames("px-4 py-3", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ))
 AccordionContent.displayName = AccordionPrimitive.Content.displayName

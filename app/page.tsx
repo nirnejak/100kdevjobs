@@ -1,13 +1,10 @@
-import * as React from "react"
+import type * as React from "react"
 import { Suspense } from "react"
-
-import { getMetadata } from "@/utils/metadata"
-
+import HomeHero from "@/components/HomeHero"
+import JobPosts, { type Job } from "@/components/JobPosts"
 import { db } from "@/db"
 import { jobs } from "@/db/schema"
-
-import JobPosts, { type Job } from "@/components/JobPosts"
-import HomeHero from "@/components/HomeHero"
+import { getMetadata } from "@/utils/metadata"
 
 export const metadata = getMetadata({
   path: "/",

@@ -2,7 +2,7 @@
 
 import { db } from "@/db"
 import { jobs } from "@/db/schema"
-import { jobFormSchema, type JobFormValues } from "@/utils/jobFormSchema"
+import { type JobFormValues, jobFormSchema } from "@/utils/jobFormSchema"
 
 interface SubmitJobResult {
   success: boolean

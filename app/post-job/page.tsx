@@ -1,10 +1,8 @@
-import * as React from "react"
 import * as motion from "motion/react-client"
-
-import { getMetadata } from "@/utils/metadata"
-import { BASE_TRANSITION } from "@/utils/animation"
-
+import type * as React from "react"
 import PostJobForm from "@/components/PostJobForm"
+import { BASE_TRANSITION } from "@/utils/animation"
+import { getMetadata } from "@/utils/metadata"
 
 export const metadata = getMetadata({
   path: "/post-job/",
@@ -20,10 +18,7 @@ const PostJobPage: React.FC = () => {
           initial={{ translateY: 10, opacity: 0, filter: "blur(5px)" }}
           animate={{ translateY: 0, opacity: 1, filter: "none" }}
           transition={{ ...BASE_TRANSITION, duration: 0.2, delay: 0 }}
-          className="
-            mb-12 text-center font-display text-4xl/tight font-bold
-            tracking-tighter text-zinc-300
-          "
+          className="mb-12 text-center font-bold font-display text-4xl/tight text-zinc-300 tracking-tighter"
         >
           Post a Job
         </motion.h1>

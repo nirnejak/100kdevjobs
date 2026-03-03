@@ -1,8 +1,7 @@
+import { useRouter, useSearchParams } from "next/navigation"
 import * as React from "react"
 
-import { useSearchParams, useRouter } from "next/navigation"
-
-import { Job } from "@/components/JobPosts"
+import type { Job } from "@/components/JobPosts"
 
 type FILTERS = {
   search?: string
@@ -35,9 +34,9 @@ const useJobFilters = (jobs: Job[]) => {
     setFilters({
       search: search || "",
       location: location || "",
-      experience_min: experience_min ? parseInt(experience_min) : undefined,
-      experience_max: experience_max ? parseInt(experience_max) : undefined,
-      salary: salary ? parseInt(salary) : undefined,
+      experience_min: experience_min ? parseInt(experience_min, 10) : undefined,
+      experience_max: experience_max ? parseInt(experience_max, 10) : undefined,
+      salary: salary ? parseInt(salary, 10) : undefined,
     })
   }, [params])
 
@@ -69,15 +68,15 @@ const useJobFilters = (jobs: Job[]) => {
       ) {
         return false
       }
-      if (experience_min && job.experience_min < parseInt(experience_min)) {
+      if (experience_min && job.experience_min < parseInt(experience_min, 10)) {
         return false
       }
-      if (salary && job.salary < parseInt(salary)) {
+      if (salary && job.salary < parseInt(salary, 10)) {
         return false
       }
       return true
     })
-  }, [jobs, filters])
+  }, [jobs, params.get])
 
   return { filters, setFilters, handleSearch, filteredJobs }
 }
